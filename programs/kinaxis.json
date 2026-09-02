@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-08-05T00:00:00Z",
+  "program_id": "kinaxis",
+  "name": "Kinaxis",
+  "platform": "bugcrowd",
+  "program_url": "https://bugcrowd.com/kinaxis",
+  "non_monetary": false,
+  "in_scope": {
+    "domains": [
+      "*.kinaxis.com",
+      "*.kinaxis.net",
+      "*.ai.kinaxis.net"
+    ],
+    "ip_ranges": [],
+    "endpoints": [],
+    "mobile_apps": []
+  },
+  "out_of_scope": {
+    "domains": [
+      "kinaxis.okta.com",
+      "kinaxis.sharepoint.com"
+    ],
+    "ip_ranges": [],
+    "endpoints": [],
+    "test_types": [
+      "dos",
+      "ddos",
+      "network_dos",
+      "load_testing",
+      "stress_testing",
+      "rate_limiting",
+      "high_volume_requests",
+      "email_bombing",
+      "social_engineering",
+      "phishing",
+      "p5_low_severity"
+    ]
+  },
+  "allowed_test_types": [
+    "recon",
+    "web_scan",
+    "xss",
+    "sqli",
+    "ssrf",
+    "xxe",
+    "ssti",
+    "command_injection",
+    "auth_bypass",
+    "idor",
+    "file_upload",
+    "path_traversal",
+    "open_redirect",
+    "csrf",
+    "cloud_enum",
+    "secrets_scan",
+    "subdomain_takeover",
+    "supply_chain"
+  ],
+  "contact": {
+    "disclosure_policy_url": "https://bugcrowd.com/kinaxis"
+  },
+  "notes": "Scope + policy populated 2026-08-05 from the Bugcrowd brief. In-scope patterns: *.kinaxis.com/*, *.kinaxis.net/*, *.ai.kinaxis.net, *vpn*.kinaxis.com (the vpn pattern is covered by *.kinaxis.com). STRICT ALLOWLIST: anything not matching these is out of scope and must not be tested (subdomains, internal corp infra, customer/vendor systems, employee endpoints, third-party services like kinaxis.okta.com / kinaxis.sharepoint.com).\n\nAUTOMATION: Unlike a 'no automated scanning' program, Kinaxis PERMITS automated testing — active types are enabled. BUT prohibited: DoS/DDoS/network DoS, load & stress testing, ANY high-volume request generation, rate-limiting attacks/bypass, email bombing, all social engineering, phishing. Testing is on PRODUCTION: do not compromise stability/integrity, do not touch other users' data (use a second @bugcrowdninja.com account), do not delete/edit site data. Port scanning left OUT of allowed_test_types to avoid aggressive network scans on prod — add back with light timing if needed. THROTTLE playbooks (low rps + jitter) to stay clear of the volumetric prohibitions.\n\n*** REPORTING: The program REJECTS 'low-effort or AI-generated content'. bb-beast's LLM layers (triage, exploit_smith, exploit_guide) are for the OPERATOR'S internal analysis ONLY — do NOT paste their output into a submission. Every report must be original human analysis with role used, clear impact, and detailed repro. One vulnerability per report; chained vulns allowed in one report if linkage is explained. Multiple paths/params/environments = duplicates. ***\n\nFOCUS AREAS: internal data exposure (config/creds/API keys/employee/proprietary data via public endpoints), customer PII exposure (unauth), subdomain takeover (*.kinaxis.com pointing to unclaimed GitHub Pages/Azure/GCP), sensitive file/dir exposure (.env, .git, backups, config, DB dumps), unauthenticated API data leakage, security misconfiguration. Testing is not limited to these. If post-exploitation could modify/destroy data, STOP and report. Safe Harbor: authorized under CFAA, good-faith research protected. Credentials: none provided; create accounts with @bugcrowdninja.com. Confirm the exact engagement URL and whether compensation is cash vs points-based (relevant to F-1 non-monetary constraint) before engaging."
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-02-18T00:00:00Z",
+  "program_id": "vulnweb-test",
+  "name": "Acunetix Intentionally Vulnerable Test Site",
+  "platform": "direct",
+  "program_url": "http://testphp.vulnweb.com",
+  "non_monetary": true,
+  "in_scope": {
+    "domains": [
+      "testphp.vulnweb.com"
+    ],
+    "ip_ranges": [],
+    "endpoints": [
+      "http://testphp.vulnweb.com/"
+    ],
+    "mobile_apps": []
+  },
+  "out_of_scope": {
+    "domains": [],
+    "ip_ranges": [],
+    "endpoints": [],
+    "test_types": [
+      "dos"
+    ]
+  },
+  "allowed_test_types": [
+    "recon",
+    "web_scan",
+    "xss",
+    "sqli",
+    "ssti",
+    "command_injection",
+    "auth_bypass",
+    "idor",
+    "open_redirect",
+    "csrf",
+    "secrets_scan",
+    "supply_chain"
+  ],
+  "contact": {
+    "disclosure_policy_url": "http://testphp.vulnweb.com",
+    "response_sla_days": 0
+  },
+  "notes": "Acunetix intentionally vulnerable PHP app. Safe to test all web vuln classes. No DoS."
+}

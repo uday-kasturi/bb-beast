@@ -1,0 +1,44 @@
+syntax = "proto3";
+package exa.language_server_pb;
+
+service LanguageServerService {
+  rpc SendUserCascadeMessage(SendUserCascadeMessageRequest) returns (stream SendUserCascadeMessageResponse);
+  rpc WellSupportedLanguages(WellSupportedLanguagesRequest) returns (WellSupportedLanguagesResponse);
+  rpc GetUserTrajectoryDebug(GetUserTrajectoryDebugRequest) returns (GetUserTrajectoryDebugResponse);
+  rpc HandleStreamingCommand(HandleStreamingCommandRequest) returns (stream HandleStreamingCommandResponse);
+}
+
+message SendUserCascadeMessageRequest {
+  string cascade_id = 1;
+  repeated CascadeItem items = 2;
+  CascadeConfig cascade_config = 3;
+}
+
+message CascadeItem {
+  string text = 1;
+}
+
+message CascadeConfig {}
+
+message SendUserCascadeMessageResponse {
+  string text = 1;
+}
+
+message WellSupportedLanguagesRequest {}
+message WellSupportedLanguagesResponse {
+  repeated string languages = 1;
+}
+
+message GetUserTrajectoryDebugRequest {}
+message GetUserTrajectoryDebugResponse {
+  string mainline = 1;
+}
+
+message HandleStreamingCommandRequest {
+  string cascade_id = 1;
+  string command = 2;
+}
+
+message HandleStreamingCommandResponse {
+  string text = 1;
+}

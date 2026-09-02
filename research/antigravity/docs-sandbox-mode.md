@@ -1,0 +1,205 @@
+- main [ref=e2]:
+  - generic [ref=e5]:
+    - generic [ref=e8]:
+      - link "Google Antigravity" [ref=e9] [cursor=pointer]:
+        - /url: /
+        - img [ref=e11]
+      - button "menu" [ref=e56] [cursor=pointer]
+    - generic [ref=e58]:
+      - navigation "Documentation navigation" [ref=e61]:
+        - link "Home expand_more" [ref=e63] [cursor=pointer]:
+          - /url: /docs/home
+          - generic [ref=e64]: Home
+          - generic [ref=e65]: expand_more
+        - link "Getting Started" [ref=e67] [cursor=pointer]:
+          - /url: /docs/get-started
+          - generic [ref=e68]: Getting Started
+        - link "Firebase Studio Migration" [ref=e70] [cursor=pointer]:
+          - /url: /docs/firebase-studio-migration
+          - generic [ref=e71]: Firebase Studio Migration
+        - link "Agent expand_more" [ref=e73] [cursor=pointer]:
+          - /url: /docs/agent
+          - generic [ref=e74]: Agent
+          - generic [ref=e75]: expand_more
+        - link "Models" [ref=e77] [cursor=pointer]:
+          - /url: /docs/models
+          - generic [ref=e78]: Models
+        - link "Agent Modes / Settings" [ref=e80] [cursor=pointer]:
+          - /url: /docs/agent-modes-settings
+          - generic [ref=e81]: Agent Modes / Settings
+        - link "Rules / Workflows" [ref=e83] [cursor=pointer]:
+          - /url: /docs/rules-workflows
+          - generic [ref=e84]: Rules / Workflows
+        - link "Skills" [ref=e86] [cursor=pointer]:
+          - /url: /docs/skills
+          - generic [ref=e87]: Skills
+        - link "Task Groups" [ref=e89] [cursor=pointer]:
+          - /url: /docs/task-groups
+          - generic [ref=e90]: Task Groups
+        - link "Browser Subagent" [ref=e92] [cursor=pointer]:
+          - /url: /docs/browser-subagent
+          - generic [ref=e93]: Browser Subagent
+        - link "Strict Mode" [ref=e95] [cursor=pointer]:
+          - /url: /docs/strict-mode
+          - generic [ref=e96]: Strict Mode
+        - link "Sandboxing" [ref=e98] [cursor=pointer]:
+          - /url: /docs/sandbox-mode
+          - generic [ref=e99]: Sandboxing
+        - generic [ref=e101]:
+          - generic [ref=e102] [cursor=pointer]: Tools
+          - generic [ref=e103] [cursor=pointer]: expand_more
+        - link "MCP" [ref=e105] [cursor=pointer]:
+          - /url: /docs/mcp
+          - generic [ref=e106]: MCP
+        - link "Artifacts expand_more" [ref=e108] [cursor=pointer]:
+          - /url: /docs/artifacts
+          - generic [ref=e109]: Artifacts
+          - generic [ref=e110]: expand_more
+        - link "Task List" [ref=e112] [cursor=pointer]:
+          - /url: /docs/task-list
+          - generic [ref=e113]: Task List
+        - link "Implementation Plan" [ref=e115] [cursor=pointer]:
+          - /url: /docs/implementation-plan
+          - generic [ref=e116]: Implementation Plan
+        - link "Walkthrough" [ref=e118] [cursor=pointer]:
+          - /url: /docs/walkthrough
+          - generic [ref=e119]: Walkthrough
+        - link "Screenshots" [ref=e121] [cursor=pointer]:
+          - /url: /docs/screenshots
+          - generic [ref=e122]: Screenshots
+        - link "Browser Recordings" [ref=e124] [cursor=pointer]:
+          - /url: /docs/browser-recordings
+          - generic [ref=e125]: Browser Recordings
+        - link "Knowledge" [ref=e127] [cursor=pointer]:
+          - /url: /docs/knowledge
+          - generic [ref=e128]: Knowledge
+        - link "Editor expand_more" [ref=e130] [cursor=pointer]:
+          - /url: /docs/editor
+          - generic [ref=e131]: Editor
+          - generic [ref=e132]: expand_more
+        - link "Tab" [ref=e134] [cursor=pointer]:
+          - /url: /docs/tab
+          - generic [ref=e135]: Tab
+        - link "Command" [ref=e137] [cursor=pointer]:
+          - /url: /docs/command
+          - generic [ref=e138]: Command
+        - link "Agent Side Panel" [ref=e140] [cursor=pointer]:
+          - /url: /docs/agent-side-panel
+          - generic [ref=e141]: Agent Side Panel
+        - link "Review Changes + Source Control" [ref=e143] [cursor=pointer]:
+          - /url: /docs/review-changes-editor
+          - generic [ref=e144]: Review Changes + Source Control
+        - link "Agent Manager expand_more" [ref=e146] [cursor=pointer]:
+          - /url: /docs/agent-manager
+          - generic [ref=e147]: Agent Manager
+          - generic [ref=e148]: expand_more
+        - link "Workspaces expand_more" [ref=e150] [cursor=pointer]:
+          - /url: /docs/workspaces
+          - generic [ref=e151]: Workspaces
+          - generic [ref=e152]: expand_more
+        - link "Playground" [ref=e154] [cursor=pointer]:
+          - /url: /docs/playground
+          - generic [ref=e155]: Playground
+        - link "Inbox" [ref=e157] [cursor=pointer]:
+          - /url: /docs/inbox
+          - generic [ref=e158]: Inbox
+        - link "Conversation View expand_more" [ref=e160] [cursor=pointer]:
+          - /url: /docs/conversation-view
+          - generic [ref=e161]: Conversation View
+          - generic [ref=e162]: expand_more
+        - link "Browser Subagent View" [ref=e164] [cursor=pointer]:
+          - /url: /docs/browser-subagent-view
+          - generic [ref=e165]: Browser Subagent View
+        - link "Panes" [ref=e167] [cursor=pointer]:
+          - /url: /docs/panes
+          - generic [ref=e168]: Panes
+        - link "Review Changes + Source Control" [ref=e170] [cursor=pointer]:
+          - /url: /docs/review-changes-manager
+          - generic [ref=e171]: Review Changes + Source Control
+        - link "Changes Sidebar" [ref=e173] [cursor=pointer]:
+          - /url: /docs/changes-sidebar
+          - generic [ref=e174]: Changes Sidebar
+        - link "Terminal" [ref=e176] [cursor=pointer]:
+          - /url: /docs/terminal
+          - generic [ref=e177]: Terminal
+        - link "Files" [ref=e179] [cursor=pointer]:
+          - /url: /docs/files
+          - generic [ref=e180]: Files
+        - link "Browser expand_more" [ref=e182] [cursor=pointer]:
+          - /url: /docs/browser
+          - generic [ref=e183]: Browser
+          - generic [ref=e184]: expand_more
+        - link "Allowlist / Denylist" [ref=e186] [cursor=pointer]:
+          - /url: /docs/allowlist-denylist
+          - generic [ref=e187]: Allowlist / Denylist
+        - link "Separate Chrome Profile" [ref=e189] [cursor=pointer]:
+          - /url: /docs/separate-chrome-profile
+          - generic [ref=e190]: Separate Chrome Profile
+        - link "Plans" [ref=e192] [cursor=pointer]:
+          - /url: /docs/plans
+          - generic [ref=e193]: Plans
+        - link "Settings" [ref=e195] [cursor=pointer]:
+          - /url: /docs/settings
+          - generic [ref=e196]: Settings
+        - link "FAQ" [ref=e198] [cursor=pointer]:
+          - /url: /docs/faq
+          - generic [ref=e199]: FAQ
+      - generic [ref=e200]:
+        - list [ref=e201] [cursor=pointer]:
+          - listitem [ref=e202]: side_navigation
+          - listitem [ref=e203]:
+            - link "Agent" [ref=e204]:
+              - /url: /docs/agent
+          - generic [ref=e205]: ">"
+          - listitem [ref=e206]: Sandboxing
+        - heading "Sandboxing Terminal Commands" [level=1] [ref=e208]
+        - paragraph [ref=e210]: Sandboxing provides kernel-level isolation for terminal commands executed by the Agent. When enabled, commands run in a restricted environment with limited file system and network access, protecting your system from unintended modifications.
+        - paragraph [ref=e212]:
+          - text: Sandboxing is currently disabled by default, but this may change in future releases. It is supported on macOS and Linux. On macOS, it leverages Seatbelt (
+          - code [ref=e213]: sandbox-exec
+          - text: ), Apple's kernel-level sandboxing mechanism. On Linux, it uses
+          - code [ref=e214]: nsjail
+          - text: for process isolation.
+        - heading "Enabling Sandboxing" [level=2] [ref=e216]
+        - paragraph [ref=e218]: You can enable or disable sandboxing in Antigravity User Settings. Toggle "Enable Terminal Sandboxing" to turn sandboxing on or off. When enabled, you can also control network access separately using the "Sandbox Allow Network" toggle.
+        - img "Sandbox settings toggles" [ref=e220]
+        - heading "Restrictions" [level=2] [ref=e222]
+        - paragraph [ref=e224]: "When sandboxing is enabled, the Agent's terminal commands are subject to the following restrictions:"
+        - list [ref=e226]:
+          - listitem [ref=e227]:
+            - generic [ref=e228]:
+              - strong [ref=e229]: File System
+              - text: ":"
+            - text: Commands can only write to your designated workspace directory and essential system locations. This prevents the Agent from accidentally deleting or modifying files outside your project.
+        - img "File system operation blocked by sandbox" [ref=e231]
+        - list [ref=e233]:
+          - listitem [ref=e234]:
+            - generic [ref=e235]:
+              - strong [ref=e236]: Network Access
+              - text: ":"
+            - text: Network connectivity can be independently controlled. Use the "Sandbox Network Access" toggle in Antigravity User Settings to allow or deny network access while maintaining file system restrictions.
+        - paragraph [ref=e238]: "Here's an example of a command being blocked due to network restrictions:"
+        - img "Sandbox network denial example" [ref=e240]
+        - heading "Handling Sandbox Violations" [level=2] [ref=e242]
+        - paragraph [ref=e244]: "If a command fails due to sandbox restrictions, you'll see a message indicating the failure may be sandbox-related. To resolve this, you can:"
+        - list [ref=e246]:
+          - listitem [ref=e247]:
+            - generic [ref=e248]:
+              - strong [ref=e249]: Disable Sandbox Permanently
+              - text: ":"
+            - text: Turn off sandboxing entirely in Antigravity User Settings.
+          - listitem [ref=e250]:
+            - generic [ref=e251]:
+              - strong [ref=e252]: Bypass for a Single Command
+              - text: ":"
+            - text: When using "Request Review" mode, you can choose to run an individual command with or without sandbox restrictions.
+        - paragraph [ref=e254]: "In \"Request Review\" mode, you'll see a \"Bypass Sandbox\" option when prompted to run a command:"
+        - img "Bypass Sandbox option in Request Review mode" [ref=e256]
+        - heading "Interaction with Strict Mode" [level=2] [ref=e258]
+        - paragraph [ref=e260]: When strict mode is enabled, sandboxing is automatically activated with network access denied. This ensures maximum protection when operating in a strict environment.
+        - img "Sandbox settings in strict mode" [ref=e262]
+        - navigation [ref=e263]:
+          - link "keyboard_arrow_left Strict Mode" [ref=e265] [cursor=pointer]:
+            - /url: /docs/strict-mode
+          - link "MCP keyboard_arrow_right" [ref=e267] [cursor=pointer]:
+            - /url: /docs/mcp

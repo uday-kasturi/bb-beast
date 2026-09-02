@@ -1,0 +1,164 @@
+- main [ref=e2]:
+  - generic [ref=e5]:
+    - generic [ref=e8]:
+      - link "Google Antigravity" [ref=e9] [cursor=pointer]:
+        - /url: /
+        - img [ref=e11]
+      - button "menu" [ref=e56] [cursor=pointer]
+    - generic [ref=e58]:
+      - navigation "Documentation navigation" [ref=e61]:
+        - link "Home expand_more" [ref=e63] [cursor=pointer]:
+          - /url: /docs/home
+          - generic [ref=e64]: Home
+          - generic [ref=e65]: expand_more
+        - link "Getting Started" [ref=e67] [cursor=pointer]:
+          - /url: /docs/get-started
+          - generic [ref=e68]: Getting Started
+        - link "Firebase Studio Migration" [ref=e70] [cursor=pointer]:
+          - /url: /docs/firebase-studio-migration
+          - generic [ref=e71]: Firebase Studio Migration
+        - link "Agent expand_more" [ref=e73] [cursor=pointer]:
+          - /url: /docs/agent
+          - generic [ref=e74]: Agent
+          - generic [ref=e75]: expand_more
+        - link "Models" [ref=e77] [cursor=pointer]:
+          - /url: /docs/models
+          - generic [ref=e78]: Models
+        - link "Agent Modes / Settings" [ref=e80] [cursor=pointer]:
+          - /url: /docs/agent-modes-settings
+          - generic [ref=e81]: Agent Modes / Settings
+        - link "Rules / Workflows" [ref=e83] [cursor=pointer]:
+          - /url: /docs/rules-workflows
+          - generic [ref=e84]: Rules / Workflows
+        - link "Skills" [ref=e86] [cursor=pointer]:
+          - /url: /docs/skills
+          - generic [ref=e87]: Skills
+        - link "Task Groups" [ref=e89] [cursor=pointer]:
+          - /url: /docs/task-groups
+          - generic [ref=e90]: Task Groups
+        - link "Browser Subagent" [ref=e92] [cursor=pointer]:
+          - /url: /docs/browser-subagent
+          - generic [ref=e93]: Browser Subagent
+        - link "Strict Mode" [ref=e95] [cursor=pointer]:
+          - /url: /docs/strict-mode
+          - generic [ref=e96]: Strict Mode
+        - link "Sandboxing" [ref=e98] [cursor=pointer]:
+          - /url: /docs/sandbox-mode
+          - generic [ref=e99]: Sandboxing
+        - generic [ref=e101]:
+          - generic [ref=e102] [cursor=pointer]: Tools
+          - generic [ref=e103] [cursor=pointer]: expand_more
+        - link "MCP" [ref=e105] [cursor=pointer]:
+          - /url: /docs/mcp
+          - generic [ref=e106]: MCP
+        - link "Artifacts expand_more" [ref=e108] [cursor=pointer]:
+          - /url: /docs/artifacts
+          - generic [ref=e109]: Artifacts
+          - generic [ref=e110]: expand_more
+        - link "Task List" [ref=e112] [cursor=pointer]:
+          - /url: /docs/task-list
+          - generic [ref=e113]: Task List
+        - link "Implementation Plan" [ref=e115] [cursor=pointer]:
+          - /url: /docs/implementation-plan
+          - generic [ref=e116]: Implementation Plan
+        - link "Walkthrough" [ref=e118] [cursor=pointer]:
+          - /url: /docs/walkthrough
+          - generic [ref=e119]: Walkthrough
+        - link "Screenshots" [ref=e121] [cursor=pointer]:
+          - /url: /docs/screenshots
+          - generic [ref=e122]: Screenshots
+        - link "Browser Recordings" [ref=e124] [cursor=pointer]:
+          - /url: /docs/browser-recordings
+          - generic [ref=e125]: Browser Recordings
+        - link "Knowledge" [ref=e127] [cursor=pointer]:
+          - /url: /docs/knowledge
+          - generic [ref=e128]: Knowledge
+        - link "Editor expand_more" [ref=e130] [cursor=pointer]:
+          - /url: /docs/editor
+          - generic [ref=e131]: Editor
+          - generic [ref=e132]: expand_more
+        - link "Tab" [ref=e134] [cursor=pointer]:
+          - /url: /docs/tab
+          - generic [ref=e135]: Tab
+        - link "Command" [ref=e137] [cursor=pointer]:
+          - /url: /docs/command
+          - generic [ref=e138]: Command
+        - link "Agent Side Panel" [ref=e140] [cursor=pointer]:
+          - /url: /docs/agent-side-panel
+          - generic [ref=e141]: Agent Side Panel
+        - link "Review Changes + Source Control" [ref=e143] [cursor=pointer]:
+          - /url: /docs/review-changes-editor
+          - generic [ref=e144]: Review Changes + Source Control
+        - link "Agent Manager expand_more" [ref=e146] [cursor=pointer]:
+          - /url: /docs/agent-manager
+          - generic [ref=e147]: Agent Manager
+          - generic [ref=e148]: expand_more
+        - link "Workspaces expand_more" [ref=e150] [cursor=pointer]:
+          - /url: /docs/workspaces
+          - generic [ref=e151]: Workspaces
+          - generic [ref=e152]: expand_more
+        - link "Playground" [ref=e154] [cursor=pointer]:
+          - /url: /docs/playground
+          - generic [ref=e155]: Playground
+        - link "Inbox" [ref=e157] [cursor=pointer]:
+          - /url: /docs/inbox
+          - generic [ref=e158]: Inbox
+        - link "Conversation View expand_more" [ref=e160] [cursor=pointer]:
+          - /url: /docs/conversation-view
+          - generic [ref=e161]: Conversation View
+          - generic [ref=e162]: expand_more
+        - link "Browser Subagent View" [ref=e164] [cursor=pointer]:
+          - /url: /docs/browser-subagent-view
+          - generic [ref=e165]: Browser Subagent View
+        - link "Panes" [ref=e167] [cursor=pointer]:
+          - /url: /docs/panes
+          - generic [ref=e168]: Panes
+        - link "Review Changes + Source Control" [ref=e170] [cursor=pointer]:
+          - /url: /docs/review-changes-manager
+          - generic [ref=e171]: Review Changes + Source Control
+        - link "Changes Sidebar" [ref=e173] [cursor=pointer]:
+          - /url: /docs/changes-sidebar
+          - generic [ref=e174]: Changes Sidebar
+        - link "Terminal" [ref=e176] [cursor=pointer]:
+          - /url: /docs/terminal
+          - generic [ref=e177]: Terminal
+        - link "Files" [ref=e179] [cursor=pointer]:
+          - /url: /docs/files
+          - generic [ref=e180]: Files
+        - link "Browser expand_more" [ref=e182] [cursor=pointer]:
+          - /url: /docs/browser
+          - generic [ref=e183]: Browser
+          - generic [ref=e184]: expand_more
+        - link "Allowlist / Denylist" [ref=e186] [cursor=pointer]:
+          - /url: /docs/allowlist-denylist
+          - generic [ref=e187]: Allowlist / Denylist
+        - link "Separate Chrome Profile" [ref=e189] [cursor=pointer]:
+          - /url: /docs/separate-chrome-profile
+          - generic [ref=e190]: Separate Chrome Profile
+        - link "Plans" [ref=e192] [cursor=pointer]:
+          - /url: /docs/plans
+          - generic [ref=e193]: Plans
+        - link "Settings" [ref=e195] [cursor=pointer]:
+          - /url: /docs/settings
+          - generic [ref=e196]: Settings
+        - link "FAQ" [ref=e198] [cursor=pointer]:
+          - /url: /docs/faq
+          - generic [ref=e199]: FAQ
+      - generic [ref=e200]:
+        - list [ref=e201] [cursor=pointer]:
+          - listitem [ref=e202]: side_navigation
+          - listitem [ref=e203]:
+            - link "Agent" [ref=e204]:
+              - /url: /docs/agent
+          - generic [ref=e205]: ">"
+          - listitem [ref=e206]: Browser Subagent
+        - heading "Browser Subagent" [level=1] [ref=e208]
+        - paragraph [ref=e210]: When the agent wants to interact with the browser, it invokes a browser subagent to handle the task at hand. The browser subagent runs a model specialized to operate on the pages that are open within the Antigravity-managed browser, which is different from the model you selected for the main agent.
+        - paragraph [ref=e212]: This subagent has access to a variety of tools that are necessary to control your browser, including clicking, scrolling, typing, reading console logs, and more. It can also read your open pages through DOM capture, screenshots, or markdown parsing, as well as taking videos.
+        - paragraph [ref=e214]: While the agent is controlling a page, it will show an overlay on the page with a blue border and a small panel with short descriptions of the actions being taken. When this is shown, you will not be allowed to interact with the page to ensure it doesn’t get confused by your actions.
+        - paragraph [ref=e216]: The browser subagent can act on tabs that are not focused, so you are free to open other tabs and use them uninterrupted as it works.
+        - navigation [ref=e217]:
+          - link "keyboard_arrow_left Task Groups" [ref=e219] [cursor=pointer]:
+            - /url: /docs/task-groups
+          - link "Strict Mode keyboard_arrow_right" [ref=e221] [cursor=pointer]:
+            - /url: /docs/strict-mode

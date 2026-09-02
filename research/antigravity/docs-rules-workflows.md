@@ -1,0 +1,209 @@
+- main [ref=e2]:
+  - generic [ref=e5]:
+    - generic [ref=e8]:
+      - link "Google Antigravity" [ref=e9] [cursor=pointer]:
+        - /url: /
+        - img [ref=e11]
+      - button "menu" [ref=e56] [cursor=pointer]
+    - generic [ref=e58]:
+      - navigation "Documentation navigation" [ref=e61]:
+        - link "Home expand_more" [ref=e63] [cursor=pointer]:
+          - /url: /docs/home
+          - generic [ref=e64]: Home
+          - generic [ref=e65]: expand_more
+        - link "Getting Started" [ref=e67] [cursor=pointer]:
+          - /url: /docs/get-started
+          - generic [ref=e68]: Getting Started
+        - link "Firebase Studio Migration" [ref=e70] [cursor=pointer]:
+          - /url: /docs/firebase-studio-migration
+          - generic [ref=e71]: Firebase Studio Migration
+        - link "Agent expand_more" [ref=e73] [cursor=pointer]:
+          - /url: /docs/agent
+          - generic [ref=e74]: Agent
+          - generic [ref=e75]: expand_more
+        - link "Models" [ref=e77] [cursor=pointer]:
+          - /url: /docs/models
+          - generic [ref=e78]: Models
+        - link "Agent Modes / Settings" [ref=e80] [cursor=pointer]:
+          - /url: /docs/agent-modes-settings
+          - generic [ref=e81]: Agent Modes / Settings
+        - link "Rules / Workflows" [ref=e83] [cursor=pointer]:
+          - /url: /docs/rules-workflows
+          - generic [ref=e84]: Rules / Workflows
+        - link "Skills" [ref=e86] [cursor=pointer]:
+          - /url: /docs/skills
+          - generic [ref=e87]: Skills
+        - link "Task Groups" [ref=e89] [cursor=pointer]:
+          - /url: /docs/task-groups
+          - generic [ref=e90]: Task Groups
+        - link "Browser Subagent" [ref=e92] [cursor=pointer]:
+          - /url: /docs/browser-subagent
+          - generic [ref=e93]: Browser Subagent
+        - link "Strict Mode" [ref=e95] [cursor=pointer]:
+          - /url: /docs/strict-mode
+          - generic [ref=e96]: Strict Mode
+        - link "Sandboxing" [ref=e98] [cursor=pointer]:
+          - /url: /docs/sandbox-mode
+          - generic [ref=e99]: Sandboxing
+        - generic [ref=e101]:
+          - generic [ref=e102] [cursor=pointer]: Tools
+          - generic [ref=e103] [cursor=pointer]: expand_more
+        - link "MCP" [ref=e105] [cursor=pointer]:
+          - /url: /docs/mcp
+          - generic [ref=e106]: MCP
+        - link "Artifacts expand_more" [ref=e108] [cursor=pointer]:
+          - /url: /docs/artifacts
+          - generic [ref=e109]: Artifacts
+          - generic [ref=e110]: expand_more
+        - link "Task List" [ref=e112] [cursor=pointer]:
+          - /url: /docs/task-list
+          - generic [ref=e113]: Task List
+        - link "Implementation Plan" [ref=e115] [cursor=pointer]:
+          - /url: /docs/implementation-plan
+          - generic [ref=e116]: Implementation Plan
+        - link "Walkthrough" [ref=e118] [cursor=pointer]:
+          - /url: /docs/walkthrough
+          - generic [ref=e119]: Walkthrough
+        - link "Screenshots" [ref=e121] [cursor=pointer]:
+          - /url: /docs/screenshots
+          - generic [ref=e122]: Screenshots
+        - link "Browser Recordings" [ref=e124] [cursor=pointer]:
+          - /url: /docs/browser-recordings
+          - generic [ref=e125]: Browser Recordings
+        - link "Knowledge" [ref=e127] [cursor=pointer]:
+          - /url: /docs/knowledge
+          - generic [ref=e128]: Knowledge
+        - link "Editor expand_more" [ref=e130] [cursor=pointer]:
+          - /url: /docs/editor
+          - generic [ref=e131]: Editor
+          - generic [ref=e132]: expand_more
+        - link "Tab" [ref=e134] [cursor=pointer]:
+          - /url: /docs/tab
+          - generic [ref=e135]: Tab
+        - link "Command" [ref=e137] [cursor=pointer]:
+          - /url: /docs/command
+          - generic [ref=e138]: Command
+        - link "Agent Side Panel" [ref=e140] [cursor=pointer]:
+          - /url: /docs/agent-side-panel
+          - generic [ref=e141]: Agent Side Panel
+        - link "Review Changes + Source Control" [ref=e143] [cursor=pointer]:
+          - /url: /docs/review-changes-editor
+          - generic [ref=e144]: Review Changes + Source Control
+        - link "Agent Manager expand_more" [ref=e146] [cursor=pointer]:
+          - /url: /docs/agent-manager
+          - generic [ref=e147]: Agent Manager
+          - generic [ref=e148]: expand_more
+        - link "Workspaces expand_more" [ref=e150] [cursor=pointer]:
+          - /url: /docs/workspaces
+          - generic [ref=e151]: Workspaces
+          - generic [ref=e152]: expand_more
+        - link "Playground" [ref=e154] [cursor=pointer]:
+          - /url: /docs/playground
+          - generic [ref=e155]: Playground
+        - link "Inbox" [ref=e157] [cursor=pointer]:
+          - /url: /docs/inbox
+          - generic [ref=e158]: Inbox
+        - link "Conversation View expand_more" [ref=e160] [cursor=pointer]:
+          - /url: /docs/conversation-view
+          - generic [ref=e161]: Conversation View
+          - generic [ref=e162]: expand_more
+        - link "Browser Subagent View" [ref=e164] [cursor=pointer]:
+          - /url: /docs/browser-subagent-view
+          - generic [ref=e165]: Browser Subagent View
+        - link "Panes" [ref=e167] [cursor=pointer]:
+          - /url: /docs/panes
+          - generic [ref=e168]: Panes
+        - link "Review Changes + Source Control" [ref=e170] [cursor=pointer]:
+          - /url: /docs/review-changes-manager
+          - generic [ref=e171]: Review Changes + Source Control
+        - link "Changes Sidebar" [ref=e173] [cursor=pointer]:
+          - /url: /docs/changes-sidebar
+          - generic [ref=e174]: Changes Sidebar
+        - link "Terminal" [ref=e176] [cursor=pointer]:
+          - /url: /docs/terminal
+          - generic [ref=e177]: Terminal
+        - link "Files" [ref=e179] [cursor=pointer]:
+          - /url: /docs/files
+          - generic [ref=e180]: Files
+        - link "Browser expand_more" [ref=e182] [cursor=pointer]:
+          - /url: /docs/browser
+          - generic [ref=e183]: Browser
+          - generic [ref=e184]: expand_more
+        - link "Allowlist / Denylist" [ref=e186] [cursor=pointer]:
+          - /url: /docs/allowlist-denylist
+          - generic [ref=e187]: Allowlist / Denylist
+        - link "Separate Chrome Profile" [ref=e189] [cursor=pointer]:
+          - /url: /docs/separate-chrome-profile
+          - generic [ref=e190]: Separate Chrome Profile
+        - link "Plans" [ref=e192] [cursor=pointer]:
+          - /url: /docs/plans
+          - generic [ref=e193]: Plans
+        - link "Settings" [ref=e195] [cursor=pointer]:
+          - /url: /docs/settings
+          - generic [ref=e196]: Settings
+        - link "FAQ" [ref=e198] [cursor=pointer]:
+          - /url: /docs/faq
+          - generic [ref=e199]: FAQ
+      - generic [ref=e200]:
+        - list [ref=e201] [cursor=pointer]:
+          - listitem [ref=e202]: side_navigation
+          - listitem [ref=e203]:
+            - link "Agent" [ref=e204]:
+              - /url: /docs/agent
+          - generic [ref=e205]: ">"
+          - listitem [ref=e206]: Rules / Workflows
+        - heading "Rules" [level=1] [ref=e208]
+        - paragraph [ref=e210]: Rules are manually defined constraints for the Agent to follow, at both the local and global levels. Rules allow users to guide the agent to follow behaviors particular to their own use cases and style.
+        - paragraph [ref=e212]: "To get started with Rules:"
+        - list [ref=e214]:
+          - listitem [ref=e215]: Open the Customizations panel via the "..." dropdown at the top of the editor's agent panel.
+          - listitem [ref=e216]: Navigate to the Rules panel.
+          - listitem [ref=e217]:
+            - generic [ref=e218]:
+              - text: Click
+              - strong [ref=e219]: + Global
+              - text: to create new Global Rules, or
+              - strong [ref=e220]: + Workspace
+              - text: to create new Workspace-specific rules.
+        - paragraph [ref=e222]: A Rule itself is simply a Markdown file, where you can input the constraints to guide the Agent to your tasks, stack, and style.
+        - paragraph [ref=e224]: Rules files are limited to 12,000 characters each.
+        - heading "Global Rules" [level=2] [ref=e226]
+        - paragraph [ref=e228]: Global rules live in ~/.gemini/GEMINI.md and are applied across all workspaces.
+        - heading "Workspace Rules" [level=2] [ref=e230]
+        - paragraph [ref=e232]: Workspace rules live in the .agents/rules folder of your workspace or git root.
+        - paragraph [ref=e234]: "At the rule level you can define how a rule should be activated:"
+        - list [ref=e236]:
+          - listitem [ref=e237]: "Manual: The rule is manually activated via at mention in Agent’s input box."
+          - listitem [ref=e238]: "Always On: The rule is always applied."
+          - listitem [ref=e239]: "Model Decision: Based on a natural language description of the rule, the model decides whether to apply the rule."
+          - listitem [ref=e240]:
+            - generic [ref=e241]:
+              - text: "Glob: Based on the glob pattern you define (e.g.,"
+              - emphasis [ref=e242]: .js, src/**/
+              - text: .ts), the rule will be applied to all files that match the pattern.
+        - paragraph [ref=e244]: "Note: Antigravity now defaults to .agents/rules, but still maintains backward support for .agent/rules."
+        - heading "@ Mentions" [level=2] [ref=e246]
+        - paragraph [ref=e248]: You can reference other files using @filename in a Rules file. If filename is a relative path, it will be interpreted relative to the location of the Rules file. If filename is an absolute path, it will be resolved as a true absolute path, otherwise it will be resolved relative to the repository. For example, @/path/to/file.md will first attempt to be resolved to /path/to/file.md, and if that file does not exist, it will be resolved to workspace/path/to/file.md.
+        - heading "Workflows" [level=1] [ref=e250]
+        - paragraph [ref=e252]: Workflows enable you to define a series of steps to guide the Agent through a repetitive set of tasks, such as deploying a service or responding to PR comments. These Workflows are saved as markdown files, allowing you to have an easy repeatable way to run key processes. Once saved, Workflows can be invoked in Agent via a slash command with the format /workflow-name.
+        - paragraph [ref=e254]: While Rules provide models with guidance by providing persistent, reusable context at the prompt level, Workflows provide a structured sequence of steps or prompts at the trajectory level, guiding the model through a series of interconnected tasks or actions.
+        - paragraph [ref=e256]: "To create a workflow:"
+        - list [ref=e258]:
+          - listitem [ref=e259]: Open the Customizations panel via the "..." dropdown at the top of the editor's agent panel.
+          - listitem [ref=e260]: Navigate to the Workflows panel.
+          - listitem [ref=e261]:
+            - generic [ref=e262]:
+              - text: Click the
+              - strong [ref=e263]: + Global
+              - text: button to create a new global workflow that can be accessed across all your workspaces, or click the
+              - strong [ref=e264]: + Workspace
+              - text: button to create a workflow specific to your current workspace.
+        - paragraph [ref=e266]: To execute a workflow, simply invoke it in Agent using the /workflow-name command. You can call other Workflows from within a workflow! For example, /workflow-1 can include instructions like “Call /workflow-2” and “Call /workflow-3”. Upon invocation, Agent sequentially processes each step defined in the workflow, performing actions or generating responses as specified.
+        - paragraph [ref=e268]: Workflows are saved as markdown files and contain a title, a description and a series of steps with specific instructions for Agent to follow. Workflow files are limited to 12,000 characters each.
+        - heading "Agent-Generated Workflows" [level=2] [ref=e270]
+        - paragraph [ref=e272]: You can also ask Agent to generate Workflows for you! This works particularly well after manually working with Agent through a series of steps since it can use the conversation history to create the Workflow.
+        - navigation [ref=e273]:
+          - link "keyboard_arrow_left Agent Modes / Settings" [ref=e275] [cursor=pointer]:
+            - /url: /docs/agent-modes-settings
+          - link "Skills keyboard_arrow_right" [ref=e277] [cursor=pointer]:
+            - /url: /docs/skills

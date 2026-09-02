@@ -1,0 +1,183 @@
+- main [ref=e2]:
+  - generic [ref=e5]:
+    - generic [ref=e8]:
+      - link "Google Antigravity" [ref=e9] [cursor=pointer]:
+        - /url: /
+        - img [ref=e11]
+      - button "menu" [ref=e56] [cursor=pointer]
+    - generic [ref=e58]:
+      - navigation "Documentation navigation" [ref=e61]:
+        - link "Home expand_more" [ref=e63] [cursor=pointer]:
+          - /url: /docs/home
+          - generic [ref=e64]: Home
+          - generic [ref=e65]: expand_more
+        - link "Getting Started" [ref=e67] [cursor=pointer]:
+          - /url: /docs/get-started
+          - generic [ref=e68]: Getting Started
+        - link "Firebase Studio Migration" [ref=e70] [cursor=pointer]:
+          - /url: /docs/firebase-studio-migration
+          - generic [ref=e71]: Firebase Studio Migration
+        - link "Agent expand_more" [ref=e73] [cursor=pointer]:
+          - /url: /docs/agent
+          - generic [ref=e74]: Agent
+          - generic [ref=e75]: expand_more
+        - link "Models" [ref=e77] [cursor=pointer]:
+          - /url: /docs/models
+          - generic [ref=e78]: Models
+        - link "Agent Modes / Settings" [ref=e80] [cursor=pointer]:
+          - /url: /docs/agent-modes-settings
+          - generic [ref=e81]: Agent Modes / Settings
+        - link "Rules / Workflows" [ref=e83] [cursor=pointer]:
+          - /url: /docs/rules-workflows
+          - generic [ref=e84]: Rules / Workflows
+        - link "Skills" [ref=e86] [cursor=pointer]:
+          - /url: /docs/skills
+          - generic [ref=e87]: Skills
+        - link "Task Groups" [ref=e89] [cursor=pointer]:
+          - /url: /docs/task-groups
+          - generic [ref=e90]: Task Groups
+        - link "Browser Subagent" [ref=e92] [cursor=pointer]:
+          - /url: /docs/browser-subagent
+          - generic [ref=e93]: Browser Subagent
+        - link "Strict Mode" [ref=e95] [cursor=pointer]:
+          - /url: /docs/strict-mode
+          - generic [ref=e96]: Strict Mode
+        - link "Sandboxing" [ref=e98] [cursor=pointer]:
+          - /url: /docs/sandbox-mode
+          - generic [ref=e99]: Sandboxing
+        - generic [ref=e101]:
+          - generic [ref=e102] [cursor=pointer]: Tools
+          - generic [ref=e103] [cursor=pointer]: expand_more
+        - link "MCP" [ref=e105] [cursor=pointer]:
+          - /url: /docs/mcp
+          - generic [ref=e106]: MCP
+        - link "Artifacts expand_more" [ref=e108] [cursor=pointer]:
+          - /url: /docs/artifacts
+          - generic [ref=e109]: Artifacts
+          - generic [ref=e110]: expand_more
+        - link "Task List" [ref=e112] [cursor=pointer]:
+          - /url: /docs/task-list
+          - generic [ref=e113]: Task List
+        - link "Implementation Plan" [ref=e115] [cursor=pointer]:
+          - /url: /docs/implementation-plan
+          - generic [ref=e116]: Implementation Plan
+        - link "Walkthrough" [ref=e118] [cursor=pointer]:
+          - /url: /docs/walkthrough
+          - generic [ref=e119]: Walkthrough
+        - link "Screenshots" [ref=e121] [cursor=pointer]:
+          - /url: /docs/screenshots
+          - generic [ref=e122]: Screenshots
+        - link "Browser Recordings" [ref=e124] [cursor=pointer]:
+          - /url: /docs/browser-recordings
+          - generic [ref=e125]: Browser Recordings
+        - link "Knowledge" [ref=e127] [cursor=pointer]:
+          - /url: /docs/knowledge
+          - generic [ref=e128]: Knowledge
+        - link "Editor expand_more" [ref=e130] [cursor=pointer]:
+          - /url: /docs/editor
+          - generic [ref=e131]: Editor
+          - generic [ref=e132]: expand_more
+        - link "Tab" [ref=e134] [cursor=pointer]:
+          - /url: /docs/tab
+          - generic [ref=e135]: Tab
+        - link "Command" [ref=e137] [cursor=pointer]:
+          - /url: /docs/command
+          - generic [ref=e138]: Command
+        - link "Agent Side Panel" [ref=e140] [cursor=pointer]:
+          - /url: /docs/agent-side-panel
+          - generic [ref=e141]: Agent Side Panel
+        - link "Review Changes + Source Control" [ref=e143] [cursor=pointer]:
+          - /url: /docs/review-changes-editor
+          - generic [ref=e144]: Review Changes + Source Control
+        - link "Agent Manager expand_more" [ref=e146] [cursor=pointer]:
+          - /url: /docs/agent-manager
+          - generic [ref=e147]: Agent Manager
+          - generic [ref=e148]: expand_more
+        - link "Workspaces expand_more" [ref=e150] [cursor=pointer]:
+          - /url: /docs/workspaces
+          - generic [ref=e151]: Workspaces
+          - generic [ref=e152]: expand_more
+        - link "Playground" [ref=e154] [cursor=pointer]:
+          - /url: /docs/playground
+          - generic [ref=e155]: Playground
+        - link "Inbox" [ref=e157] [cursor=pointer]:
+          - /url: /docs/inbox
+          - generic [ref=e158]: Inbox
+        - link "Conversation View expand_more" [ref=e160] [cursor=pointer]:
+          - /url: /docs/conversation-view
+          - generic [ref=e161]: Conversation View
+          - generic [ref=e162]: expand_more
+        - link "Browser Subagent View" [ref=e164] [cursor=pointer]:
+          - /url: /docs/browser-subagent-view
+          - generic [ref=e165]: Browser Subagent View
+        - link "Panes" [ref=e167] [cursor=pointer]:
+          - /url: /docs/panes
+          - generic [ref=e168]: Panes
+        - link "Review Changes + Source Control" [ref=e170] [cursor=pointer]:
+          - /url: /docs/review-changes-manager
+          - generic [ref=e171]: Review Changes + Source Control
+        - link "Changes Sidebar" [ref=e173] [cursor=pointer]:
+          - /url: /docs/changes-sidebar
+          - generic [ref=e174]: Changes Sidebar
+        - link "Terminal" [ref=e176] [cursor=pointer]:
+          - /url: /docs/terminal
+          - generic [ref=e177]: Terminal
+        - link "Files" [ref=e179] [cursor=pointer]:
+          - /url: /docs/files
+          - generic [ref=e180]: Files
+        - link "Browser expand_more" [ref=e182] [cursor=pointer]:
+          - /url: /docs/browser
+          - generic [ref=e183]: Browser
+          - generic [ref=e184]: expand_more
+        - link "Allowlist / Denylist" [ref=e186] [cursor=pointer]:
+          - /url: /docs/allowlist-denylist
+          - generic [ref=e187]: Allowlist / Denylist
+        - link "Separate Chrome Profile" [ref=e189] [cursor=pointer]:
+          - /url: /docs/separate-chrome-profile
+          - generic [ref=e190]: Separate Chrome Profile
+        - link "Plans" [ref=e192] [cursor=pointer]:
+          - /url: /docs/plans
+          - generic [ref=e193]: Plans
+        - link "Settings" [ref=e195] [cursor=pointer]:
+          - /url: /docs/settings
+          - generic [ref=e196]: Settings
+        - link "FAQ" [ref=e198] [cursor=pointer]:
+          - /url: /docs/faq
+          - generic [ref=e199]: FAQ
+      - generic [ref=e200]:
+        - list [ref=e201] [cursor=pointer]:
+          - listitem [ref=e202]: side_navigation
+          - listitem [ref=e203]:
+            - link "Browser" [ref=e204]:
+              - /url: /docs/browser
+          - generic [ref=e205]: ">"
+          - listitem [ref=e206]: Allowlist / Denylist
+        - heading "Allowlist / Denylist" [level=1] [ref=e208]
+        - paragraph [ref=e210]: "The browser uses a two-layer security system to control which URLs can be accessed:"
+        - list [ref=e212]:
+          - listitem [ref=e213]:
+            - generic [ref=e214]:
+              - strong [ref=e215]: Denylist
+              - text: "- Deny dangerous/malicious URLs"
+          - listitem [ref=e216]:
+            - generic [ref=e217]:
+              - strong [ref=e218]: Allowlist
+              - text: "- Explicitly allow trusted URLs"
+        - heading "How It Works" [level=2] [ref=e220]
+        - heading "Denylist" [level=3] [ref=e222]
+        - paragraph [ref=e224]: The denylist is maintained and enforced using the Google Superroots’s BadUrlsChecker service (See documentation). When the browser attempts to navigate to a URL, the hostname is checked against the server-side denylist via RPC.
+        - paragraph [ref=e226]:
+          - strong [ref=e227]: "NOTE:"
+          - text: If the server is unavailable, access is denied by default.
+        - heading "Allowlist" [level=3] [ref=e229]
+        - paragraph [ref=e231]: The allowlist is a local text file that you can edit to explicitly trust specific URLs.
+        - img "Allowlist" [ref=e233]
+        - paragraph [ref=e235]: The allowlist is initialized with just localhost, and can be edited at anytime.
+        - paragraph [ref=e237]: "When the browser attempts to navigate to a non-allowlisted URL, it will prompt you with an “always allow” button, which if clicked will add the URL to the allowlist and enable the browser to open and interact with the web page. An example situation is shown below:"
+        - img "Always Allow" [ref=e239]
+        - paragraph [ref=e241]: "You can also add/remove URLS from the allowlist manually. However, the denylist always takes precedence: you cannot allowlist a URL that appears on the denylist."
+        - navigation [ref=e242]:
+          - link "keyboard_arrow_left Browser" [ref=e244] [cursor=pointer]:
+            - /url: /docs/browser
+          - link "Separate Chrome Profile keyboard_arrow_right" [ref=e246] [cursor=pointer]:
+            - /url: /docs/separate-chrome-profile

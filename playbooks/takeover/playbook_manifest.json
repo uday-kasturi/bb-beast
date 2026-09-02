@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-02-17T00:00:00Z",
+  "last_updated": "2026-02-17T00:00:00Z",
+  "name": "takeover",
+  "version": "1.0.0",
+  "description": "Subdomain and service takeover detection. Checks dangling CNAME records pointing to unclaimed services (GitHub Pages, Heroku, Netlify, S3, Azure, etc.) and NS delegation issues.",
+  "target_type": ["web", "network"],
+  "tool_dependencies": ["nuclei", "dnsx"],
+  "playbook_dependencies": ["recon"],
+  "depth_levels": {
+    "quick": {
+      "description": "nuclei subdomain-takeover templates on all subdomains. ~10 min.",
+      "estimated_duration_minutes": 10
+    },
+    "standard": {
+      "description": "nuclei takeover templates + CNAME dangling check via dnsx on all subdomains. ~25 min.",
+      "estimated_duration_minutes": 25
+    },
+    "exhaustive": {
+      "description": "All standard + NS delegation check + service fingerprinting for all 25+ known takeover-vulnerable services. ~60 min.",
+      "estimated_duration_minutes": 60
+    }
+  },
+  "throttle": {
+    "requests_per_second": 100,
+    "jitter_min_ms": 50,
+    "jitter_max_ms": 200
+  },
+  "confidence_threshold_for_llm": 0.80,
+  "author": "bb-beast",
+  "tags": ["takeover", "subdomain", "cname", "dns", "dangling"]
+}

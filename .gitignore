@@ -1,0 +1,28 @@
+# ── Secrets — never commit. Paste keys into .env (see .env.example)
+.env
+sessions/*.json
+!sessions/.gitkeep
+
+# ── Sensitive engagement data — real target evidence, cookies, findings.
+#    Kept local only; never push to a public remote.
+reports/
+reports.zip
+alerts/
+
+# ── Generated / cache output
+runs/
+graphify-out/
+.playwright-mcp/
+.fastembed_cache/
+fastembed_cache/
+
+# ── Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# ── OS
+.DS_Store
+**/.DS_Store

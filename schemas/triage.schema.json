@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "triage.schema.json",
+  "title": "Triage",
+  "description": "LLM analysis of findings.json. Generated once per run by Claude API.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "created_at",
+    "run_id",
+    "model",
+    "input_findings_count",
+    "verdicts",
+    "run_summary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "run_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "model": {
+      "type": "string",
+      "description": "Claude model ID used, e.g. claude-opus-4-6"
+    },
+    "input_findings_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "prompt_tokens": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "completion_tokens": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "verdicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "verdict",
+          "reasoning",
+          "adjusted_severity",
+          "impact",
+          "suggested_next_steps"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "verdict": {
+            "type": "string",
+            "enum": ["exploitable", "not_exploitable", "needs_more_info", "false_positive"]
+          },
+          "reasoning": {
+            "type": "string",
+            "description": "LLM explanation of verdict"
+          },
+          "adjusted_severity": {
+            "type": "string",
+            "enum": ["critical", "high", "medium", "low", "info"]
+          },
+          "impact": {
+            "type": "string",
+            "description": "Human-readable impact description"
+          },
+          "suggested_next_steps": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Ordered list of recommended next steps (human readable)"
+          },
+          "attack_delivery": {
+            "type": "string",
+            "description": "Exact URL/request/parameter used to deliver the exploit"
+          },
+          "burp_worthy": {
+            "type": "boolean",
+            "description": "Whether LLM recommends feeding this to Burp for deeper analysis"
+          },
+          "severity_escalated": {
+            "type": "boolean",
+            "description": "True if adjusted_severity is above severity_raw. Set by the post-parse escalation checker, not the LLM."
+          },
+          "evidence_gate": {
+            "type": "string",
+            "description": "Set by the orchestrator when a verdict is downgraded for lacking hard execution evidence."
+          },
+          "critic_downgraded": {
+            "type": "boolean",
+            "description": "True if the critic agent challenged this verdict downward."
+          }
+        }
+      }
+    },
+    "run_summary": {
+      "type": "object",
+      "required": ["overall_assessment", "top_findings", "recommended_focus"],
+      "additionalProperties": false,
+      "properties": {
+        "overall_assessment": {
+          "type": "string"
+        },
+        "top_findings": {
+          "type": "array",
+          "items": { "type": "string", "format": "uuid" },
+          "description": "Finding IDs ranked highest priority by LLM"
+        },
+        "recommended_focus": {
+          "type": "string",
+          "description": "Where the human should spend time next"
+        }
+      }
+    }
+  }
+}

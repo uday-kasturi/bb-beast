@@ -1,0 +1,45 @@
+syntax = "proto3";
+package exa.language_server_pb;
+
+import "google/protobuf/timestamp.proto";
+
+message Metadata {
+  string ide_name = 1;
+  string ide_version = 7;
+  string extension_version = 2;
+  string api_key = 3;
+  string locale = 4;
+  string os = 5;
+  string session_id = 10;
+}
+
+message TextOrScopeItem {
+  string text = 1;
+}
+
+message CascadeConfig {}
+
+message SendUserCascadeMessageRequest {
+  string cascade_id = 1;
+  repeated TextOrScopeItem items = 2;
+  Metadata metadata = 3;
+  CascadeConfig cascade_config = 5;
+}
+
+message SendUserCascadeMessageResponse {
+  bool queued = 1;
+}
+
+message WellSupportedLanguagesRequest {}
+message WellSupportedLanguagesResponse {
+  repeated string languages = 1;
+}
+
+message GetUserTrajectoryDebugRequest {}
+message GetUserTrajectoryDebugResponse {}
+
+service LanguageServerService {
+  rpc SendUserCascadeMessage(SendUserCascadeMessageRequest) returns (SendUserCascadeMessageResponse);
+  rpc WellSupportedLanguages(WellSupportedLanguagesRequest) returns (WellSupportedLanguagesResponse);
+  rpc GetUserTrajectoryDebug(GetUserTrajectoryDebugRequest) returns (GetUserTrajectoryDebugResponse);
+}

@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "run_manifest.schema.json",
+  "title": "RunManifest",
+  "description": "Full audit trail for a single pipeline invocation.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "created_at",
+    "run_id",
+    "program_id",
+    "invoked_by",
+    "depth",
+    "started_at",
+    "playbooks_run",
+    "tools_invoked",
+    "output_files",
+    "llm_calls",
+    "errors",
+    "status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "run_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "program_id": {
+      "type": "string"
+    },
+    "invoked_by": {
+      "type": "string",
+      "description": "Human operator identifier, e.g. username"
+    },
+    "depth": {
+      "type": "string",
+      "enum": ["quick", "standard", "exhaustive"]
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finished_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "duration_seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "playbooks_run": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "version", "status", "started_at"],
+        "additionalProperties": false,
+        "properties": {
+          "name":       { "type": "string" },
+          "version":    { "type": "string" },
+          "status":     { "type": "string", "enum": ["completed", "partial", "failed", "skipped"] },
+          "started_at": { "type": "string", "format": "date-time" },
+          "finished_at":{ "type": "string", "format": "date-time" },
+          "error":      { "type": "string" }
+        }
+      }
+    },
+    "tools_invoked": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tool_name", "status", "raw_output_path"],
+        "additionalProperties": false,
+        "properties": {
+          "tool_name":       { "type": "string" },
+          "tool_version":    { "type": "string" },
+          "status":          { "type": "string", "enum": ["success", "partial", "failed", "skipped"] },
+          "raw_output_path": { "type": "string" },
+          "duration_seconds":{ "type": "number", "minimum": 0 },
+          "findings_count":  { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "output_files": {
+      "type": "object",
+      "required": ["findings", "triage", "actions"],
+      "additionalProperties": false,
+      "properties": {
+        "findings": { "type": "string" },
+        "triage":   { "type": "string" },
+        "actions":  { "type": "string" }
+      }
+    },
+    "llm_calls": {
+      "type": "object",
+      "required": ["count", "model", "total_prompt_tokens", "total_completion_tokens"],
+      "additionalProperties": false,
+      "properties": {
+        "count":                    { "type": "integer", "minimum": 0 },
+        "model":                    { "type": "string" },
+        "total_prompt_tokens":      { "type": "integer", "minimum": 0 },
+        "total_completion_tokens":  { "type": "integer", "minimum": 0 }
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["stage", "message"],
+        "properties": {
+          "stage":   { "type": "string" },
+          "message": { "type": "string" },
+          "tool":    { "type": "string" }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["complete", "partial", "failed"]
+    }
+  }
+}

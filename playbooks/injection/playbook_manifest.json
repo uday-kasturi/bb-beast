@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-02-17T00:00:00Z",
+  "last_updated": "2026-02-17T00:00:00Z",
+  "name": "injection",
+  "version": "1.0.0",
+  "description": "SQLi, XSS, SSTI, command injection detection. Targets endpoints with parameters found during recon and content discovery. Uses dalfox for XSS, sqlmap for SQLi, commix for command injection, and nuclei injection templates.",
+  "target_type": ["web"],
+  "tool_dependencies": ["dalfox", "sqlmap", "commix", "nuclei"],
+  "playbook_dependencies": ["recon"],
+  "depth_levels": {
+    "quick": {
+      "description": "Nuclei injection templates + dalfox on parameterized URLs. ~25 min.",
+      "estimated_duration_minutes": 25
+    },
+    "standard": {
+      "description": "dalfox + sqlmap on forms and params + commix + nuclei injection tags. ~90 min.",
+      "estimated_duration_minutes": 90
+    },
+    "exhaustive": {
+      "description": "All standard + deep sqlmap (level 5) + blind XSS + SSTI + commix all techniques. ~4 hours.",
+      "estimated_duration_minutes": 240
+    }
+  },
+  "throttle": {
+    "requests_per_second": 50,
+    "jitter_min_ms": 200,
+    "jitter_max_ms": 800
+  },
+  "confidence_threshold_for_llm": 0.65,
+  "author": "bb-beast",
+  "tags": ["injection", "sqli", "xss", "ssti", "command-injection"]
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-08-05T00:00:00Z",
+  "program_id": "nine-entertainment-vdp",
+  "name": "Nine Entertainment Vulnerability Disclosure Program",
+  "platform": "bugcrowd",
+  "program_url": "https://bugcrowd.com/engagements/nine-entertainment-vdp-pro",
+  "non_monetary": true,
+  "in_scope": {
+    "domains": [
+      "nineforbrands.com.au",
+      "adonline.com.au",
+      "advertisers.com.au",
+      "mi9.com.au",
+      "nine.com.au",
+      "nineentertainmentco.com.au",
+      "ninemediaroom.com.au",
+      "nineplus.com.au",
+      "nineradiosyndication.com.au",
+      "ninetech.dev",
+      "9jumpin.com.au",
+      "9news.com.au",
+      "9now.com.au",
+      "nbnnews.com.au",
+      "ninenbn.com.au",
+      "stan.com.au",
+      "afr.com",
+      "smh.com.au",
+      "drive.com.au",
+      "pedestrian.tv",
+      "brisbanetimes.com.au",
+      "gizmodo.com.au",
+      "goodfood.com.au",
+      "theage.com.au",
+      "*.watoday.com.au"
+    ],
+    "ip_ranges": [],
+    "endpoints": [],
+    "mobile_apps": [
+      {"name": "9now", "platform": "ios", "bundle_id": "id542088539"},
+      {"name": "9now", "platform": "android", "bundle_id": "au.com.mi9.jumpin.app"},
+      {"name": "9news", "platform": "ios", "bundle_id": "id1010533727"},
+      {"name": "9news", "platform": "android", "bundle_id": "nineNewsAlerts.nine.com"},
+      {"name": "3AW", "platform": "ios", "bundle_id": "id443063438"},
+      {"name": "3AW", "platform": "android", "bundle_id": "com.thisisaim.radio3aw"},
+      {"name": "2GB", "platform": "ios", "bundle_id": "id403184432"},
+      {"name": "2GB", "platform": "android", "bundle_id": "com.jbm.macq.kony.twogb"},
+      {"name": "6PR", "platform": "ios", "bundle_id": "id443067670"},
+      {"name": "6PR", "platform": "android", "bundle_id": "com.thisisaim.radio6pr"},
+      {"name": "Sydney Morning Herald", "platform": "ios", "bundle_id": "id1411569831"},
+      {"name": "Sydney Morning Herald", "platform": "android", "bundle_id": "com.fairfaxmedia.ink.metro.smh"},
+      {"name": "Australian Financial Review", "platform": "ios", "bundle_id": "id524599864"},
+      {"name": "Australian Financial Review", "platform": "android", "bundle_id": "com.fairfaxmedia.ink.metro.afr"},
+      {"name": "The Age", "platform": "ios", "bundle_id": "id1411569220"},
+      {"name": "The Age", "platform": "android", "bundle_id": "com.fairfaxmedia.ink.metro.age"},
+      {"name": "Stan", "platform": "ios", "bundle_id": "id948095331"},
+      {"name": "Stan", "platform": "android", "bundle_id": "au.com.stan.and"}
+    ]
+  },
+  "out_of_scope": {
+    "domains": [
+      "*.domain.com.au",
+      "businessinsider.com.au"
+    ],
+    "ip_ranges": [],
+    "endpoints": [],
+    "test_types": [
+      "automated_scanning",
+      "dos",
+      "ddos",
+      "brute_force",
+      "rate_limiting",
+      "social_engineering",
+      "phishing",
+      "physical_testing",
+      "post_exploitation",
+      "stolen_credentials",
+      "data_modification",
+      "attacks_on_users",
+      "third_party_services"
+    ]
+  },
+  "allowed_test_types": [
+    "recon"
+  ],
+  "contact": {
+    "email": "support@bugcrowd.com",
+    "disclosure_policy_url": "https://bugcrowd.com/engagements/nine-entertainment-vdp-pro"
+  },
+  "notes": "Scope + full exclusions populated 2026-08-05 from the authenticated Bugcrowd brief. VDP = disclosure only, non-monetary; Bugcrowd VRT.\n\n*** CRITICAL: THE PROGRAM PROHIBITS 'No automated scanning'. ***\nbb-beast is an automated scanner, so its ACTIVE pipeline (httpx probing, nuclei, ffuf/feroxbuster, katana, dalfox, sqlmap, and the validator's probe loop) MUST NOT be run against this program. allowed_test_types is deliberately set to ['recon'] ONLY, so the validator scope gate BLOCKS every active test type (xss/sqli/ssrf/etc.) — fail-closed by design. Use this program for PASSIVE recon (third-party OSINT/subdomain data that does not touch Nine infra) and MANUAL testing only. Every finding requires a manual proof-of-concept; the program rejects 'generic vulnerability scan results without proof of concept'.\n\nHARD PROHIBITIONS (out_of_scope.test_types): automated scanning; volume/DoS/DDoS/brute force/rate-limiting; attacks on customers/end users; use of stolen/breached credentials; modifying/deleting/retaining Nine or customer data; social engineering/phishing/physical; post-exploitation unless explicitly approved; attacks on third-party services (LinkedIn/Twitter/etc.).\n\nWON'T-ACCEPT NOISE (deprioritize in triage, don't report): outdated-browser issues; cookie flags (Secure/HTTPOnly); missing/misconfigured security headers (CSP/HSTS/X-XSS-Protection/Cache-Control); clickjacking / missing X-Frame-Options; email config (SPF/DKIM/DMARC); verbose errors/stack traces/status codes; functional/UI/UX/spelling bugs; non-exploitable config (weak TLS ciphers, password policy, session expiry, cert pinning, version-disclosing headers); non-sensitive exposed API keys (Google Maps, Raygun).\n\nOPERATIONAL: do NOT submit contact forms / create tickets / send emails that generate work for non-security staff. Use an @bugcrowdninja.com email for any research that needs one. Personal credentials (your own or discovered) are allowed for testing. OUT-OF-SCOPE domains: *.domain.com.au (Domain Group), businessinsider.com.au. The brief also broadly authorizes 'Any Nine owned asset' beyond the enumerated list — confirm Nine ownership before touching anything not listed."
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-02-25T00:00:00Z",
+  "program_id": "bcny",
+  "name": "The Browser Company of New York (Arc / Dia)",
+  "platform": "hackerone",
+  "program_url": "https://hackerone.com/browsercny",
+  "non_monetary": false,
+  "in_scope": {
+    "domains": [
+      "diabrowser.com",
+      "*.diabrowser.com",
+      "arc.net",
+      "*.arc.net",
+      "bcny.com",
+      "*.bcny.com",
+      "thebrowser.company",
+      "*.thebrowser.company",
+      "company.thebrowser.arc"
+    ],
+    "ip_ranges": [],
+    "endpoints": [],
+    "mobile_apps": [
+      {"name": "Dia", "platform": "ios", "bundle_id": "id6472513080"}
+    ]
+  },
+  "out_of_scope": {
+    "domains": [],
+    "ip_ranges": [],
+    "endpoints": [],
+    "test_types": [
+      "dos",
+      "brute_force",
+      "social_engineering",
+      "physical_access"
+    ]
+  },
+  "allowed_test_types": [
+    "recon",
+    "web_scan",
+    "xss",
+    "sqli",
+    "ssti",
+    "auth_bypass",
+    "idor",
+    "open_redirect",
+    "csrf",
+    "secrets_scan",
+    "supply_chain"
+  ],
+  "contact": {
+    "disclosure_policy_url": "https://hackerone.com/browsercny",
+    "response_sla_days": 3
+  },
+  "notes": "Arc is Chromium-based — Chromium-only bugs are out of scope. AI prompt injection only in scope if it demonstrably exfiltrates user data or takes unauthorized actions (misinformation/DoS/unexpected behavior are explicitly OOS). Computer use vulns must show injection of data not presented to user OR crossing to different origin than displayed destination. Firebase was previous critical attack surface (2024 Boost injection). Arc has a custom .arc TLD extension — company.thebrowser.arc is an internal domain surfaced through the browser. Dia is their AI browser (newer product, less battle-tested). Each vuln only rewarded once even if cross-asset. Highest-paying in-scope asset wins if multi-asset."
+}

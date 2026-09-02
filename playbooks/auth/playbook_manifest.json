@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-02-17T00:00:00Z",
+  "last_updated": "2026-02-17T00:00:00Z",
+  "name": "auth",
+  "version": "1.0.0",
+  "description": "IDOR, broken authentication, JWT weaknesses, OAuth flaws, session management issues. Uses nuclei auth templates and targeted checks on login/API endpoints discovered during recon.",
+  "target_type": ["web", "api"],
+  "tool_dependencies": ["nuclei", "ffuf"],
+  "playbook_dependencies": ["recon"],
+  "depth_levels": {
+    "quick": {
+      "description": "Nuclei auth/jwt/idor templates on live hosts. ~15 min.",
+      "estimated_duration_minutes": 15
+    },
+    "standard": {
+      "description": "Nuclei auth templates + ffuf parameter fuzzing on auth endpoints + JWT checks. ~45 min.",
+      "estimated_duration_minutes": 45
+    },
+    "exhaustive": {
+      "description": "All standard + IDOR enumeration on ID parameters + OAuth flow analysis + session fixation checks. ~2 hours.",
+      "estimated_duration_minutes": 120
+    }
+  },
+  "throttle": {
+    "requests_per_second": 30,
+    "jitter_min_ms": 300,
+    "jitter_max_ms": 1000
+  },
+  "confidence_threshold_for_llm": 0.60,
+  "author": "bb-beast",
+  "tags": ["auth", "idor", "jwt", "oauth", "session"]
+}

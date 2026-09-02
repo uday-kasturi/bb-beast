@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "playbook_patch.schema.json",
+  "title": "PlaybookPatch",
+  "description": "Output when human pastes a disclosure into Claude. Applied to playbooks by the patch engine.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "created_at",
+    "patch_id",
+    "source",
+    "date_of_disclosure",
+    "target_playbooks",
+    "patch_type",
+    "change_description",
+    "change",
+    "confidence",
+    "requires_human_review",
+    "target_playbook_schema_version"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "patch_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "source": {
+      "type": "string",
+      "description": "URL or description of the disclosure/report"
+    },
+    "date_of_disclosure": {
+      "type": "string",
+      "format": "date"
+    },
+    "target_playbooks": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "List of playbook names this patch applies to"
+    },
+    "patch_type": {
+      "type": "string",
+      "enum": ["new_payload", "new_step", "update_tool_flag", "new_playbook", "deprecate_technique"]
+    },
+    "change_description": {
+      "type": "string",
+      "description": "Human-readable explanation of what this patch does"
+    },
+    "change": {
+      "type": "object",
+      "description": "Machine-readable change specification",
+      "required": ["operation", "target", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "type": "string",
+          "enum": ["add", "update", "remove"]
+        },
+        "target": {
+          "type": "string",
+          "description": "Dot-path to the field being changed, e.g. steps.nuclei.flags or payloads.xss"
+        },
+        "value": {
+          "description": "New value to set (for add/update). Omit for remove."
+        },
+        "previous_value": {
+          "description": "Previous value (for update). Documents what was there before."
+        }
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "requires_human_review": {
+      "type": "boolean"
+    },
+    "target_playbook_schema_version": {
+      "type": "string",
+      "description": "Schema version of the target playbook manifest"
+    },
+    "applied_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Set by the engine when the patch is applied"
+    },
+    "applied": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

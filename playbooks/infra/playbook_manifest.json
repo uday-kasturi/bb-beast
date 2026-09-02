@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-02-17T00:00:00Z",
+  "last_updated": "2026-02-17T00:00:00Z",
+  "name": "infra",
+  "version": "1.0.0",
+  "description": "Port scanning, outdated services, CVE detection. Uses naabu for fast port discovery, nmap for service detection and NSE scripts, and nuclei CVE templates.",
+  "target_type": ["web", "network"],
+  "tool_dependencies": ["naabu", "nmap", "nuclei"],
+  "playbook_dependencies": ["recon"],
+  "depth_levels": {
+    "quick": {
+      "description": "naabu top-100 ports + nuclei CVE critical/high on live hosts. ~20 min.",
+      "estimated_duration_minutes": 20
+    },
+    "standard": {
+      "description": "naabu top-1000 + nmap service detection + nuclei CVE all severities. ~60 min.",
+      "estimated_duration_minutes": 60
+    },
+    "exhaustive": {
+      "description": "naabu full port range + nmap full NSE scan + nuclei CVE + network service checks. ~4 hours.",
+      "estimated_duration_minutes": 240
+    }
+  },
+  "throttle": {
+    "requests_per_second": 500,
+    "jitter_min_ms": 0,
+    "jitter_max_ms": 100
+  },
+  "confidence_threshold_for_llm": 0.70,
+  "author": "bb-beast",
+  "tags": ["infrastructure", "ports", "cve", "services", "network"]
+}

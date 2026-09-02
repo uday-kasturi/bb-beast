@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-02-17T00:00:00Z",
+  "last_updated": "2026-02-17T00:00:00Z",
+  "name": "recon",
+  "version": "1.0.0",
+  "description": "Asset discovery and surface mapping. Enumerates subdomains, live hosts, ports, technologies, historical URLs, and crawled endpoints. Always runs first — all other playbooks depend on its output.",
+  "target_type": ["web", "network"],
+  "tool_dependencies": [
+    "subfinder", "amass", "assetfinder",
+    "httpx", "dnsx",
+    "waybackurls", "gau",
+    "katana", "gowitness"
+  ],
+  "playbook_dependencies": [],
+  "depth_levels": {
+    "quick": {
+      "description": "Passive subdomain enum (subfinder only) + live host probe + nuclei critical/high. ~15 min.",
+      "estimated_duration_minutes": 15
+    },
+    "standard": {
+      "description": "Full subdomain enum (subfinder + amass + assetfinder) + DNS resolution + live probe + historical URLs + katana crawl. ~45 min.",
+      "estimated_duration_minutes": 45
+    },
+    "exhaustive": {
+      "description": "All standard steps + amass brute-force + dnsx brute + full gau + deep katana crawl + gowitness screenshots + port scanning. ~2-4 hours.",
+      "estimated_duration_minutes": 180
+    }
+  },
+  "throttle": {
+    "requests_per_second": 150,
+    "jitter_min_ms": 50,
+    "jitter_max_ms": 200
+  },
+  "confidence_threshold_for_llm": 0.6,
+  "author": "bb-beast",
+  "tags": ["recon", "subdomain", "enumeration", "discovery"]
+}

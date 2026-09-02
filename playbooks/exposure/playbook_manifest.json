@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-02-17T00:00:00Z",
+  "last_updated": "2026-02-17T00:00:00Z",
+  "name": "exposure",
+  "version": "1.0.0",
+  "description": "Secrets, misconfigurations, open directories, backup files, exposed panels, and debug endpoints. Runs content discovery and secrets scanning against all live assets from recon.",
+  "target_type": ["web"],
+  "tool_dependencies": ["ffuf", "feroxbuster", "nuclei", "trufflehog", "nikto"],
+  "playbook_dependencies": ["recon"],
+  "depth_levels": {
+    "quick": {
+      "description": "ffuf quick dir scan + nuclei exposure templates on live hosts. ~20 min.",
+      "estimated_duration_minutes": 20
+    },
+    "standard": {
+      "description": "ffuf + feroxbuster recursive + nuclei exposure/misconfiguration + nikto on key hosts. ~60 min.",
+      "estimated_duration_minutes": 60
+    },
+    "exhaustive": {
+      "description": "All standard + deep feroxbuster + trufflehog on discovered GitHub orgs + nikto on all hosts. ~3 hours.",
+      "estimated_duration_minutes": 180
+    }
+  },
+  "throttle": {
+    "requests_per_second": 100,
+    "jitter_min_ms": 100,
+    "jitter_max_ms": 400
+  },
+  "confidence_threshold_for_llm": 0.55,
+  "author": "bb-beast",
+  "tags": ["exposure", "secrets", "misconfiguration", "content-discovery"]
+}

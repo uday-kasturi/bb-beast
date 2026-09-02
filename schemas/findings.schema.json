@@ -1,0 +1,170 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "findings.schema.json",
+  "title": "Findings",
+  "description": "Unified findings aggregated across all tools in a playbook run.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "created_at",
+    "run_id",
+    "program_id",
+    "playbook_name",
+    "playbook_version",
+    "depth",
+    "findings",
+    "summary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "run_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "program_id": {
+      "type": "string"
+    },
+    "playbook_name": {
+      "type": "string"
+    },
+    "playbook_version": {
+      "type": "string"
+    },
+    "depth": {
+      "type": "string",
+      "enum": ["quick", "standard", "exhaustive"]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "type",
+          "severity_raw",
+          "url",
+          "evidence",
+          "tool",
+          "confidence",
+          "raw_output_ref"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": {
+            "type": "string",
+            "description": "Vulnerability class, e.g. sqli, xss, open_redirect, subdomain_takeover, secret_exposure"
+          },
+          "severity_raw": {
+            "type": "string",
+            "enum": ["critical", "high", "medium", "low", "info", "unknown"]
+          },
+          "url": {
+            "type": "string",
+            "description": "Full URL or host:port of the affected asset"
+          },
+          "host": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "port": {
+            "type": "integer"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "tool": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "description": "Rules-based confidence score. No LLM involved."
+          },
+          "raw_output_ref": {
+            "type": "string",
+            "description": "Relative path to the raw_output/[tool].json file"
+          },
+          "deduplicated_from": {
+            "type": "array",
+            "items": { "type": "string", "format": "uuid" },
+            "description": "Finding IDs this was merged from"
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "execution_status": {
+            "type": "string",
+            "enum": ["not_attempted", "attempted_no_callback", "callback_received", "screenshot_confirmed"],
+            "description": "OAST/screenshot confirmation status. Only callback_received or screenshot_confirmed are eligible for triage."
+          },
+          "execution_evidence": {
+            "type": "string",
+            "description": "Path to screenshot, interactsh callback log, or inline callback record"
+          },
+          "blocking_conditions": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Conditions preventing execution confirmation on this instance (e.g. broken dependency, no admin panel access)"
+          },
+          "oast_host": {
+            "type": "string",
+            "description": "The interactsh OAST hostname used for this finding's callback probe"
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["total", "by_severity", "by_type"],
+      "additionalProperties": false,
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total_findings": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Alias for total — kept for convenience"
+        },
+        "by_severity": {
+          "type": "object",
+          "properties": {
+            "critical": { "type": "integer", "minimum": 0 },
+            "high":     { "type": "integer", "minimum": 0 },
+            "medium":   { "type": "integer", "minimum": 0 },
+            "low":      { "type": "integer", "minimum": 0 },
+            "info":     { "type": "integer", "minimum": 0 },
+            "unknown":  { "type": "integer", "minimum": 0 }
+          }
+        },
+        "by_type": {
+          "type": "object",
+          "description": "Keys are finding type strings, values are counts",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        },
+        "by_tool": {
+          "type": "object",
+          "description": "Keys are tool names, values are counts",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "program.schema.json",
+  "title": "Program",
+  "description": "Describes a target bug bounty program and its scope constraints.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "created_at",
+    "program_id",
+    "name",
+    "platform",
+    "program_url",
+    "in_scope",
+    "out_of_scope",
+    "allowed_test_types",
+    "non_monetary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "program_id": {
+      "type": "string",
+      "description": "Unique slug identifier for this program, e.g. google-vrp"
+    },
+    "name": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string",
+      "enum": ["hackerone", "bugcrowd", "intigriti", "yeswehack", "direct", "cisa", "other"]
+    },
+    "program_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "non_monetary": {
+      "type": "boolean",
+      "description": "True if this is a hall-of-fame / non-monetary program"
+    },
+    "in_scope": {
+      "type": "object",
+      "required": ["domains", "ip_ranges", "endpoints", "mobile_apps"],
+      "additionalProperties": false,
+      "properties": {
+        "domains": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Wildcard and exact domains. e.g. *.google.com"
+        },
+        "ip_ranges": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "CIDR ranges or individual IPs"
+        },
+        "endpoints": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Specific URL paths or API endpoints explicitly in scope"
+        },
+        "mobile_apps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "platform"],
+            "properties": {
+              "name": { "type": "string" },
+              "platform": { "type": "string", "enum": ["ios", "android"] },
+              "bundle_id": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "out_of_scope": {
+      "type": "object",
+      "required": ["domains", "ip_ranges", "endpoints", "test_types"],
+      "additionalProperties": false,
+      "properties": {
+        "domains": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "ip_ranges": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "endpoints": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "test_types": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Explicitly banned test types, e.g. sqli, dos, social_engineering"
+        }
+      }
+    },
+    "allowed_test_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "recon", "port_scan", "web_scan", "sqli", "xss", "ssrf",
+          "xxe", "ssti", "command_injection", "auth_bypass", "idor",
+          "file_upload", "path_traversal", "open_redirect", "csrf",
+          "cloud_enum", "secrets_scan", "subdomain_takeover", "supply_chain"
+        ]
+      }
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "disclosure_policy_url": { "type": "string", "format": "uri" },
+        "response_sla_days": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-text notes about the program"
+    }
+  }
+}

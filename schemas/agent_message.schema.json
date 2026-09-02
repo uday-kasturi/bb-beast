@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "agent_message.schema.json",
+  "title": "Agent Message",
+  "description": "A single typed handoff on the agent bus. Agents communicate through these — carrying POINTERS to blackboard artifacts (refs), not the artifact data itself, to keep inter-agent traffic bounded.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "created_at",
+    "run_id",
+    "message_id",
+    "from_agent",
+    "to_agent",
+    "intent"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "run_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "message_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "reply_to": {
+      "type": "string",
+      "format": "uuid",
+      "description": "message_id this message responds to, for threading dynamic-edge dialogues (e.g. critic replying to triage)."
+    },
+    "from_agent": {
+      "type": "string",
+      "description": "Name of the emitting agent, or 'orchestrator'."
+    },
+    "to_agent": {
+      "type": "string",
+      "description": "Target agent name, 'orchestrator', or 'broadcast'."
+    },
+    "intent": {
+      "type": "string",
+      "enum": [
+        "task",
+        "result",
+        "request_info",
+        "verdict",
+        "escalate",
+        "done"
+      ],
+      "description": "task=do this work; result=work product ready; request_info=need more data (e.g. loop back to recon); verdict=judgment on a finding; escalate=hand up to orchestrator for sign-off; done=agent finished its part."
+    },
+    "refs": {
+      "type": "array",
+      "description": "Pointers to blackboard artifacts this message concerns (run-dir-relative paths). The receiver reads only what it needs — data does NOT travel inline.",
+      "items": {
+        "type": "object",
+        "required": ["artifact", "path"],
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "type": "string",
+            "description": "Logical name, e.g. 'findings', 'triage', 'exploit_candidates'."
+          },
+          "path": {
+            "type": "string",
+            "description": "Run-dir-relative path to the artifact file."
+          },
+          "finding_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Optional subset of finding ids within the artifact this message is scoped to."
+          }
+        }
+      }
+    },
+    "payload": {
+      "type": "object",
+      "description": "Small inline structured data — control fields, summaries, verdict counts. NOT bulk artifact data (use refs for that).",
+      "additionalProperties": true
+    },
+    "cost": {
+      "type": "object",
+      "description": "Audit of the model call that produced this message, if any.",
+      "additionalProperties": false,
+      "properties": {
+        "backend": { "type": "string", "enum": ["openrouter", "cli", "none"] },
+        "model": { "type": "string" },
+        "prompt_tokens": { "type": "integer", "minimum": 0 },
+        "completion_tokens": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "round": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Loop round for bounded dynamic-edge dialogues (critic reconcile, validator probe loop)."
+    }
+  }
+}

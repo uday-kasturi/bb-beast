@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "program_id": "maryland-vdp",
+  "name": "Maryland DoIT Vulnerability Disclosure Program",
+  "platform": "Bugcrowd",
+  "program_url": "https://doit.maryland.gov/services/cybersecurity/vulnerability_disclosure_program/Pages/default.aspx",
+  "submission_url": "https://bugcrowd.com/maryland-vdp",
+  "contact": "bugbounty@maryland.gov",
+  "monetary_rewards": false,
+  "acknowledgment": true,
+  "in_scope": {
+    "domains": [
+      "*.maryland.gov",
+      "*.md.gov",
+      "*.state.md.us"
+    ],
+    "notes": "Publicly accessible systems using state domains. Systems connected to networkMaryland. State agencies, local governments, eligible non-state orgs using state IT infra."
+  },
+  "out_of_scope": {
+    "domains": [],
+    "notes": "Third-party vendor systems (report to vendor directly). Physical facilities. P5 vulns without chained exploits showing real-world impact."
+  },
+  "rules": {
+    "allowed": [
+      "N-Day submissions without embargo",
+      "High-impact N-Days with robust PoC",
+      "Reporting exposed credentials without authentication"
+    ],
+    "prohibited": [
+      "DoS, mass automated testing, service degradation",
+      "Social engineering, phishing, employee deception",
+      "Physical access attempts or network sniffing",
+      "Brute force, credential stuffing, password spraying",
+      "Modifying or deleting data",
+      "Installing backdoors or pivoting to other assets",
+      "Using credentials from third-party breaches"
+    ]
+  }
+}

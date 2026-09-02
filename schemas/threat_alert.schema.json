@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "threat_alert.schema.json",
+  "title": "ThreatAlert",
+  "description": "Hot intelligence injected into scans. For active CVEs, supply chain vulns, etc.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "created_at",
+    "alert_id",
+    "name",
+    "type",
+    "severity",
+    "affected_indicator",
+    "detection_method",
+    "inject_into_playbooks",
+    "auto_check",
+    "expiry_date",
+    "source_url"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "alert_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["supply_chain", "cve", "active_exploitation", "new_technique"]
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["critical", "high", "medium", "low", "info"]
+    },
+    "cve_id": {
+      "type": "string",
+      "description": "CVE identifier if applicable, e.g. CVE-2024-12345"
+    },
+    "affected_indicator": {
+      "type": "object",
+      "required": ["type", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["domain", "package_name", "cdn_url", "ip_range", "file_hash", "header_value", "keyword"]
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "detection_method": {
+      "type": "object",
+      "required": ["description", "check_type"],
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Human-readable description of what to look for"
+        },
+        "check_type": {
+          "type": "string",
+          "enum": ["http_response_header", "http_response_body", "dns_record", "file_content", "nuclei_template", "custom_script"]
+        },
+        "nuclei_template_id": {
+          "type": "string",
+          "description": "If check_type is nuclei_template, the template ID to run"
+        },
+        "regex": {
+          "type": "string",
+          "description": "Regex pattern if check_type is http_response_body or file_content"
+        },
+        "header_name": {
+          "type": "string",
+          "description": "Header name if check_type is http_response_header"
+        }
+      }
+    },
+    "inject_into_playbooks": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Playbook names to inject this check into"
+    },
+    "auto_check": {
+      "type": "boolean",
+      "description": "true = run check automatically, false = flag for human first"
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date",
+      "description": "After this date the engine stops checking for this alert"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

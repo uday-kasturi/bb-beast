@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-06-23T18:00:00Z",
+  "program_id": "eurofins",
+  "name": "Eurofins Vulnerability Disclosure Engagement",
+  "platform": "bugcrowd",
+  "program_url": "https://bugcrowd.com/eurofins-vdp",
+  "non_monetary": true,
+
+  "in_scope": {
+    "domains": [
+      "*.eurofins.com",
+      "eurofins.com",
+      "*.eurofinsscientific.com",
+      "eurofinsscientific.com",
+      "*.eurofins.fr",
+      "*.eurofins.de",
+      "*.eurofins.nl",
+      "*.eurofins.be",
+      "*.eurofins.dk",
+      "*.eurofins.se",
+      "*.eurofins.no",
+      "*.eurofins.fi",
+      "*.eurofins.it",
+      "*.eurofins.es",
+      "*.eurofins.pt",
+      "*.eurofins.pl",
+      "*.eurofins.cz",
+      "*.eurofins.at",
+      "*.eurofins.ch",
+      "*.eurofins.co.uk",
+      "*.eurofins.ie",
+      "*.eurofins.lu",
+      "*.eurofins.hu",
+      "*.eurofins.ro",
+      "*.eurofins.bg",
+      "*.eurofins.hr",
+      "*.eurofins.sk",
+      "*.eurofins.si",
+      "*.eurofins.lt",
+      "*.eurofins.lv",
+      "*.eurofins.ee",
+      "*.eurofins.gr",
+      "*.eurofins.us",
+      "*.eurofins.ca",
+      "*.eurofins.com.br",
+      "*.eurofins.in",
+      "*.eurofins.co.in",
+      "*.eurofins.com.au",
+      "*.eurofins.co.nz",
+      "*.eurofins.sg",
+      "*.eurofins.com.hk",
+      "*.eurofins.co.jp",
+      "*.eurofins.co.kr",
+      "*.eurofins.co.za",
+      "*.eurofins.com.mx"
+    ],
+    "ip_ranges": [],
+    "endpoints": [],
+    "mobile_apps": []
+  },
+
+  "out_of_scope": {
+    "domains": [],
+    "ip_ranges": [],
+    "endpoints": [],
+    "test_types": [
+      "dos",
+      "ddos",
+      "port_scan",
+      "brute_force",
+      "spam",
+      "social_engineering",
+      "phishing",
+      "physical_access"
+    ]
+  },
+
+  "allowed_test_types": [
+    "recon",
+    "web_scan",
+    "xss",
+    "sqli",
+    "ssrf",
+    "ssti",
+    "xxe",
+    "command_injection",
+    "auth_bypass",
+    "idor",
+    "path_traversal",
+    "file_upload",
+    "secrets_scan",
+    "subdomain_takeover",
+    "supply_chain",
+    "cloud_enum"
+  ],
+
+  "contact": {
+    "disclosure_policy_url": "https://bugcrowd.com/eurofins-vdp",
+    "response_sla_days": 30
+  },
+
+  "notes": "VDP — hall of fame only, no monetary rewards. Scope: 'All Eurofins Assets' — interpreted as all *.eurofins.com + all country-TLD variants listed in in_scope. 950+ labs, 59 countries, 65,000 staff, 450M tests/year. Known tech: Bootstrap, Select2, jQuery. No credentials provided — external threat model. Register with @bugcrowdninja.com email where account creation is possible. THROTTLE: max ~5 req/s, jitter 200-800ms — production environment, other users active. STOP AND REPORT if you encounter patient health data, clinical diagnostic results, or pharmaceutical compliance data — do not read/copy it. Do NOT modify or delete data. Business logic high-value: IDOR on test result/order IDs (clinical data exposure), cross-tenant isolation between lab clients in B2B portals, workflow bypass in ordering systems, subdomain takeover (massive estate, likely stale CNAMEs). Out-of-scope finding classes: missing HTTP headers (unless exploitable), CSRF on logout or anonymous/non-sensitive actions, clickjacking without impact, content spoofing without code execution, known-vuln libraries without PoC, SSL/TLS best practices, missing CSP/HSTS/HttpOnly-on-non-sensitive, SPF/DKIM/DMARC, low-impact host headers, software version disclosure, tabnabbing, open redirect alone (needs secondary impact), open ports without direct vuln, automated reports without PoC, expired/invalid credentials, outdated-browser-only issues, email enumeration, CSV injection without PoC, third-party integrations. VRT out of scope: Application-Level DoS, CSRF Logout, XSS IE-Only, Physical Security, P5 informational. Duplicates: same vuln across multiple paths/endpoints treated as one — submit the strongest instance only. Every report must include: role used for testing, exact reproduction steps, clear impact statement, no AI-generated filler."
+}

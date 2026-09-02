@@ -1,0 +1,397 @@
+- main [ref=e2]:
+  - generic [ref=e5]:
+    - generic [ref=e8]:
+      - link "Google Antigravity" [ref=e9] [cursor=pointer]:
+        - /url: /
+        - img [ref=e11]
+      - button "menu" [ref=e56] [cursor=pointer]
+    - generic [ref=e58]:
+      - navigation "Documentation navigation" [ref=e61]:
+        - link "Home expand_more" [ref=e63] [cursor=pointer]:
+          - /url: /docs/home
+          - generic [ref=e64]: Home
+          - generic [ref=e65]: expand_more
+        - link "Getting Started" [ref=e67] [cursor=pointer]:
+          - /url: /docs/get-started
+          - generic [ref=e68]: Getting Started
+        - link "Firebase Studio Migration" [ref=e70] [cursor=pointer]:
+          - /url: /docs/firebase-studio-migration
+          - generic [ref=e71]: Firebase Studio Migration
+        - link "Agent expand_more" [ref=e73] [cursor=pointer]:
+          - /url: /docs/agent
+          - generic [ref=e74]: Agent
+          - generic [ref=e75]: expand_more
+        - link "Models" [ref=e77] [cursor=pointer]:
+          - /url: /docs/models
+          - generic [ref=e78]: Models
+        - link "Agent Modes / Settings" [ref=e80] [cursor=pointer]:
+          - /url: /docs/agent-modes-settings
+          - generic [ref=e81]: Agent Modes / Settings
+        - link "Rules / Workflows" [ref=e83] [cursor=pointer]:
+          - /url: /docs/rules-workflows
+          - generic [ref=e84]: Rules / Workflows
+        - link "Skills" [ref=e86] [cursor=pointer]:
+          - /url: /docs/skills
+          - generic [ref=e87]: Skills
+        - link "Task Groups" [ref=e89] [cursor=pointer]:
+          - /url: /docs/task-groups
+          - generic [ref=e90]: Task Groups
+        - link "Browser Subagent" [ref=e92] [cursor=pointer]:
+          - /url: /docs/browser-subagent
+          - generic [ref=e93]: Browser Subagent
+        - link "Strict Mode" [ref=e95] [cursor=pointer]:
+          - /url: /docs/strict-mode
+          - generic [ref=e96]: Strict Mode
+        - link "Sandboxing" [ref=e98] [cursor=pointer]:
+          - /url: /docs/sandbox-mode
+          - generic [ref=e99]: Sandboxing
+        - generic [ref=e101]:
+          - generic [ref=e102] [cursor=pointer]: Tools
+          - generic [ref=e103] [cursor=pointer]: expand_more
+        - link "MCP" [ref=e105] [cursor=pointer]:
+          - /url: /docs/mcp
+          - generic [ref=e106]: MCP
+        - link "Artifacts expand_more" [ref=e108] [cursor=pointer]:
+          - /url: /docs/artifacts
+          - generic [ref=e109]: Artifacts
+          - generic [ref=e110]: expand_more
+        - link "Task List" [ref=e112] [cursor=pointer]:
+          - /url: /docs/task-list
+          - generic [ref=e113]: Task List
+        - link "Implementation Plan" [ref=e115] [cursor=pointer]:
+          - /url: /docs/implementation-plan
+          - generic [ref=e116]: Implementation Plan
+        - link "Walkthrough" [ref=e118] [cursor=pointer]:
+          - /url: /docs/walkthrough
+          - generic [ref=e119]: Walkthrough
+        - link "Screenshots" [ref=e121] [cursor=pointer]:
+          - /url: /docs/screenshots
+          - generic [ref=e122]: Screenshots
+        - link "Browser Recordings" [ref=e124] [cursor=pointer]:
+          - /url: /docs/browser-recordings
+          - generic [ref=e125]: Browser Recordings
+        - link "Knowledge" [ref=e127] [cursor=pointer]:
+          - /url: /docs/knowledge
+          - generic [ref=e128]: Knowledge
+        - link "Editor expand_more" [ref=e130] [cursor=pointer]:
+          - /url: /docs/editor
+          - generic [ref=e131]: Editor
+          - generic [ref=e132]: expand_more
+        - link "Tab" [ref=e134] [cursor=pointer]:
+          - /url: /docs/tab
+          - generic [ref=e135]: Tab
+        - link "Command" [ref=e137] [cursor=pointer]:
+          - /url: /docs/command
+          - generic [ref=e138]: Command
+        - link "Agent Side Panel" [ref=e140] [cursor=pointer]:
+          - /url: /docs/agent-side-panel
+          - generic [ref=e141]: Agent Side Panel
+        - link "Review Changes + Source Control" [ref=e143] [cursor=pointer]:
+          - /url: /docs/review-changes-editor
+          - generic [ref=e144]: Review Changes + Source Control
+        - link "Agent Manager expand_more" [ref=e146] [cursor=pointer]:
+          - /url: /docs/agent-manager
+          - generic [ref=e147]: Agent Manager
+          - generic [ref=e148]: expand_more
+        - link "Workspaces expand_more" [ref=e150] [cursor=pointer]:
+          - /url: /docs/workspaces
+          - generic [ref=e151]: Workspaces
+          - generic [ref=e152]: expand_more
+        - link "Playground" [ref=e154] [cursor=pointer]:
+          - /url: /docs/playground
+          - generic [ref=e155]: Playground
+        - link "Inbox" [ref=e157] [cursor=pointer]:
+          - /url: /docs/inbox
+          - generic [ref=e158]: Inbox
+        - link "Conversation View expand_more" [ref=e160] [cursor=pointer]:
+          - /url: /docs/conversation-view
+          - generic [ref=e161]: Conversation View
+          - generic [ref=e162]: expand_more
+        - link "Browser Subagent View" [ref=e164] [cursor=pointer]:
+          - /url: /docs/browser-subagent-view
+          - generic [ref=e165]: Browser Subagent View
+        - link "Panes" [ref=e167] [cursor=pointer]:
+          - /url: /docs/panes
+          - generic [ref=e168]: Panes
+        - link "Review Changes + Source Control" [ref=e170] [cursor=pointer]:
+          - /url: /docs/review-changes-manager
+          - generic [ref=e171]: Review Changes + Source Control
+        - link "Changes Sidebar" [ref=e173] [cursor=pointer]:
+          - /url: /docs/changes-sidebar
+          - generic [ref=e174]: Changes Sidebar
+        - link "Terminal" [ref=e176] [cursor=pointer]:
+          - /url: /docs/terminal
+          - generic [ref=e177]: Terminal
+        - link "Files" [ref=e179] [cursor=pointer]:
+          - /url: /docs/files
+          - generic [ref=e180]: Files
+        - link "Browser expand_more" [ref=e182] [cursor=pointer]:
+          - /url: /docs/browser
+          - generic [ref=e183]: Browser
+          - generic [ref=e184]: expand_more
+        - link "Allowlist / Denylist" [ref=e186] [cursor=pointer]:
+          - /url: /docs/allowlist-denylist
+          - generic [ref=e187]: Allowlist / Denylist
+        - link "Separate Chrome Profile" [ref=e189] [cursor=pointer]:
+          - /url: /docs/separate-chrome-profile
+          - generic [ref=e190]: Separate Chrome Profile
+        - link "Plans" [ref=e192] [cursor=pointer]:
+          - /url: /docs/plans
+          - generic [ref=e193]: Plans
+        - link "Settings" [ref=e195] [cursor=pointer]:
+          - /url: /docs/settings
+          - generic [ref=e196]: Settings
+        - link "FAQ" [ref=e198] [cursor=pointer]:
+          - /url: /docs/faq
+          - generic [ref=e199]: FAQ
+      - generic [ref=e200]:
+        - list [ref=e201] [cursor=pointer]:
+          - listitem [ref=e202]: side_navigation
+          - listitem [ref=e203]: Tools
+          - generic [ref=e204]: ">"
+          - listitem [ref=e205]: MCP
+        - 'heading "Antigravity Editor: MCP Integration" [level=1] [ref=e207]'
+        - paragraph [ref=e209]: Antigravity supports the Model Context Protocol (MCP), a standard that allows the editor to securely connect to your local tools, databases, and external services. This integration provides the AI with real-time context beyond just the files open in your editor.
+        - heading "What is MCP?" [level=2] [ref=e211]
+        - paragraph [ref=e213]: MCP acts as a bridge between Antigravity and your broader development environment. Instead of manually pasting context (like database schemas or logs) into the editor, MCP allows Antigravity to fetch this information directly when needed.
+        - heading "Core Features" [level=2] [ref=e215]
+        - heading "1. Context Resources" [level=3] [ref=e217]
+        - paragraph [ref=e219]: The AI can read data from connected MCP servers to inform its suggestions.
+        - paragraph [ref=e221]:
+          - strong [ref=e222]: "Example:"
+          - text: When writing a SQL query, Antigravity can inspect your live Neon or Supabase schema to suggest correct table and column names.
+        - paragraph [ref=e224]:
+          - strong [ref=e225]: "Example:"
+          - text: When debugging, the editor can pull in recent build logs from Netlify or Heroku.
+        - heading "2. Custom Tools" [level=3] [ref=e227]
+        - paragraph [ref=e229]: MCP enables Antigravity to execute specific, safe actions defined by your connected servers.
+        - paragraph [ref=e231]:
+          - strong [ref=e232]: "Example:"
+          - text: "\"Create a Linear issue for this TODO.\""
+        - paragraph [ref=e234]:
+          - strong [ref=e235]: "Example:"
+          - text: "\"Search Notion or GitHub for authentication patterns.\""
+        - heading "How to Connect" [level=2] [ref=e237]
+        - paragraph [ref=e239]: Connections are managed directly through the built-in MCP Store.
+        - list [ref=e241]:
+          - listitem [ref=e242]:
+            - generic [ref=e243]:
+              - strong [ref=e244]: "Access the Store:"
+              - text: Open the MCP Store panel within the "..." dropdown at the top of the editor's side panel.
+          - listitem [ref=e245]:
+            - generic [ref=e246]:
+              - strong [ref=e247]: "Browse & Install:"
+              - text: Select any of the supported servers from the list and click Install.
+          - listitem [ref=e248]:
+            - generic [ref=e249]:
+              - strong [ref=e250]: "Authenticate:"
+              - text: Follow the on-screen prompts to securely link your accounts (where applicable).
+        - paragraph [ref=e252]: Once installed, resources and tools from the server are automatically available to the editor.
+        - heading "Connecting Custom MCP Servers" [level=2] [ref=e254]
+        - paragraph [ref=e256]: "To connect to a custom MCP server:"
+        - list [ref=e258]:
+          - listitem [ref=e259]: Open the MCP store via the "..." dropdown at the top of the editor's agent panel.
+          - listitem [ref=e260]: Click on "Manage MCP Servers"
+          - listitem [ref=e261]: Click on "View raw config"
+          - listitem [ref=e262]: Modify the mcp_config.json with your custom MCP server configuration.
+        - paragraph [ref=e264]:
+          - text: The configuration file is located at
+          - code [ref=e265]: ~/.gemini/antigravity/mcp_config.json
+          - text: .
+        - heading "Configuration Structure" [level=3] [ref=e267]
+        - paragraph [ref=e269]:
+          - text: The configuration file has a single
+          - code [ref=e270]: mcpServers
+          - text: object where you define each server you want to connect to.
+        - generic [ref=e273]:
+          - generic [ref=e274]:
+            - generic [ref=e275]: json
+            - button "content_copy" [ref=e276] [cursor=pointer]
+          - code [ref=e279]: "{ \"mcpServers\": { \"serverName\": { \"command\": \"path/to/executable\", \"args\": [ \"--arg1\", \"value1\" ], \"env\": { \"API_KEY\": \"your-api-key\" } } } }"
+        - heading "Configuration Properties" [level=3] [ref=e281]
+        - paragraph [ref=e283]: "Each server entry supports the following properties:"
+        - paragraph [ref=e285]:
+          - strong [ref=e286]: "Transport (one required):"
+        - list [ref=e288]:
+          - listitem [ref=e289]:
+            - generic [ref=e290]:
+              - strong [ref=e291]:
+                - code [ref=e292]: command
+              - text: "(string): Path to the executable for stdio transport."
+          - listitem [ref=e293]:
+            - generic [ref=e294]:
+              - strong [ref=e295]:
+                - code [ref=e296]: serverUrl
+              - text: "(string): URL for remote servers for Streamable HTTP transport."
+        - paragraph [ref=e298]:
+          - strong [ref=e299]: "Optional:"
+        - list [ref=e301]:
+          - listitem [ref=e302]:
+            - generic [ref=e303]:
+              - strong [ref=e304]:
+                - code [ref=e305]: args
+              - text: "(string[]): Command-line arguments for stdio transport."
+          - listitem [ref=e306]:
+            - generic [ref=e307]:
+              - strong [ref=e308]:
+                - code [ref=e309]: env
+              - text: "(object): Environment variables for the stdio server process."
+          - listitem [ref=e310]:
+            - generic [ref=e311]:
+              - strong [ref=e312]:
+                - code [ref=e313]: cwd
+              - text: "(string): Working directory for stdio servers."
+          - listitem [ref=e314]:
+            - generic [ref=e315]:
+              - strong [ref=e316]:
+                - code [ref=e317]: headers
+              - text: "(object): Custom HTTP headers for remote servers."
+          - listitem [ref=e318]:
+            - generic [ref=e319]:
+              - strong [ref=e320]:
+                - code [ref=e321]: authProviderType
+              - text: "(string): Authentication provider. Supports"
+              - code [ref=e322]: "\"google_credentials\""
+              - text: for ADC.
+          - listitem [ref=e323]:
+            - generic [ref=e324]:
+              - strong [ref=e325]:
+                - code [ref=e326]: oauth
+              - text: "(object): OAuth client credentials ("
+              - code [ref=e327]: clientId
+              - text: ","
+              - code [ref=e328]: clientSecret
+              - text: ).
+          - listitem [ref=e329]:
+            - generic [ref=e330]:
+              - strong [ref=e331]:
+                - code [ref=e332]: disabled
+              - text: "(boolean): Temporarily disable a server without removing its configuration."
+          - listitem [ref=e333]:
+            - generic [ref=e334]:
+              - strong [ref=e335]:
+                - code [ref=e336]: disabledTools
+              - text: "(string[]): Tool names to not provide to the model."
+        - heading "Authentication" [level=2] [ref=e338]
+        - heading "Google Credentials" [level=3] [ref=e340]
+        - paragraph [ref=e342]:
+          - text: Set
+          - code [ref=e343]: authProviderType
+          - text: to
+          - code [ref=e344]: "\"google_credentials\""
+          - text: to use Google Application Default Credentials (ADC).
+        - generic [ref=e347]:
+          - generic [ref=e348]:
+            - generic [ref=e349]: json
+            - button "content_copy" [ref=e350] [cursor=pointer]
+          - code [ref=e353]: "{ \"mcpServers\": { \"my-gcp-service\": { \"serverUrl\": \"https://example.googleapis.com/mcp/\", \"authProviderType\": \"google_credentials\" } } }"
+        - paragraph [ref=e355]: "This requires Application Default Credentials to be configured. To set them up, run:"
+        - generic [ref=e358]:
+          - generic [ref=e359]:
+            - generic [ref=e360]: bash
+            - button "content_copy" [ref=e361] [cursor=pointer]
+          - code [ref=e364]: gcloud auth application-default login
+        - heading "OAuth" [level=3] [ref=e366]
+        - paragraph [ref=e368]: "Antigravity can automatically handle OAuth for servers that support dynamic client registration (DCR). For these servers, no additional configuration is needed:"
+        - generic [ref=e371]:
+          - generic [ref=e372]:
+            - generic [ref=e373]: json
+            - button "content_copy" [ref=e374] [cursor=pointer]
+          - code [ref=e377]: "{ \"mcpServers\": { \"oauth-server\": { \"serverUrl\": \"https://api.example.com/mcp/\" } } }"
+        - paragraph [ref=e379]: "If the server does not support dynamic client registration, you can provide your client credentials manually:"
+        - generic [ref=e382]:
+          - generic [ref=e383]:
+            - generic [ref=e384]: json
+            - button "content_copy" [ref=e385] [cursor=pointer]
+          - code [ref=e388]: "{ \"mcpServers\": { \"oauth-server\": { \"serverUrl\": \"https://api.example.com/mcp/\", \"oauth\": { \"clientId\": \"your-client-id\", \"clientSecret\": \"your-client-secret\" } } } }"
+        - paragraph [ref=e390]: "If you provided client credentials manually, ensure the following is registered as a redirect URI in your OAuth provider:"
+        - code [ref=e396]: https://antigravity.google/oauth-callback
+        - paragraph [ref=e398]: "When connecting to an OAuth-enabled server:"
+        - list [ref=e400]:
+          - listitem [ref=e401]:
+            - generic [ref=e402]:
+              - text: Open
+              - strong [ref=e403]: Agent Settings
+              - text: with
+              - code [ref=e404]: Cmd+,
+              - text: (Mac) or
+              - code [ref=e405]: Ctrl+,
+              - text: (Windows/Linux).
+          - listitem [ref=e406]:
+            - generic [ref=e407]:
+              - text: Navigate to the
+              - strong [ref=e408]: Customizations
+              - text: tab and click the
+              - strong [ref=e409]: Authenticate
+              - text: button next to the server.
+        - img "Click Authenticate" [ref=e411]
+        - list [ref=e413]:
+          - listitem [ref=e414]: Complete authentication in your browser and copy the authorization code.
+        - img "Copy authorization code" [ref=e416]
+        - list [ref=e418]:
+          - listitem [ref=e419]:
+            - generic [ref=e420]:
+              - text: Paste the code back into the settings panel and click
+              - strong [ref=e421]: Submit
+              - text: .
+        - img "Paste auth code" [ref=e423]
+        - paragraph [ref=e425]: Once authenticated, the server will reconnect automatically.
+        - img "Authenticated server" [ref=e427]
+        - paragraph [ref=e429]:
+          - text: Access tokens are stored in
+          - code [ref=e430]: ~/.gemini/antigravity/mcp_oauth_tokens.json
+          - text: . Expired tokens are refreshed automatically, and invalid tokens are removed.
+        - heading "Custom Headers" [level=3] [ref=e432]
+        - paragraph [ref=e434]:
+          - text: For servers that require custom HTTP headers (e.g. API keys or bearer tokens), add them to the
+          - code [ref=e435]: headers
+          - text: "object. For example:"
+        - generic [ref=e438]:
+          - generic [ref=e439]:
+            - generic [ref=e440]: json
+            - button "content_copy" [ref=e441] [cursor=pointer]
+          - code [ref=e444]: "{ \"mcpServers\": { \"my-remote-server\": { \"serverUrl\": \"https://api.example.com/mcp/\", \"headers\": { \"Authorization\": \"Bearer YOUR_API_TOKEN\" } } } }"
+        - heading "Supported Servers" [level=2] [ref=e446]
+        - paragraph [ref=e448]: "The MCP Store currently features integrations for:"
+        - list [ref=e450]:
+          - listitem [ref=e451]: Airweave
+          - listitem [ref=e452]: Arize
+          - listitem [ref=e453]: AlloyDB for PostgreSQL
+          - listitem [ref=e454]: Atlassian
+          - listitem [ref=e455]: BigQuery
+          - listitem [ref=e456]: Chrome DevTools
+          - listitem [ref=e457]: ClickHouse
+          - listitem [ref=e458]: Cloud SQL for PostgreSQL
+          - listitem [ref=e459]: Cloud SQL for MySQL
+          - listitem [ref=e460]: Cloud SQL for SQL Server
+          - listitem [ref=e461]: Dart
+          - listitem [ref=e462]: Dataplex
+          - listitem [ref=e463]: Figma Dev Mode MCP
+          - listitem [ref=e464]: Firebase
+          - listitem [ref=e465]: GitHub
+          - listitem [ref=e466]: Harness
+          - listitem [ref=e467]: Heroku
+          - listitem [ref=e468]: Linear
+          - listitem [ref=e469]: Locofy
+          - listitem [ref=e470]: Looker
+          - listitem [ref=e471]: MCP Toolbox for Databases
+          - listitem [ref=e472]: MongoDB
+          - listitem [ref=e473]: Neon
+          - listitem [ref=e474]: Netlify
+          - listitem [ref=e475]: Notion
+          - listitem [ref=e476]: PayPal
+          - listitem [ref=e477]: Perplexity Ask
+          - listitem [ref=e478]: Pinecone
+          - listitem [ref=e479]: Postman
+          - listitem [ref=e480]: Prisma
+          - listitem [ref=e481]: Redis
+          - listitem [ref=e482]: Sequential Thinking
+          - listitem [ref=e483]: SonarQube
+          - listitem [ref=e484]: Spanner
+          - listitem [ref=e485]: Stripe
+          - listitem [ref=e486]: Supabase
+        - navigation [ref=e487]:
+          - link "keyboard_arrow_left Sandboxing Terminal Commands" [ref=e489] [cursor=pointer]:
+            - /url: /docs/sandbox-mode
+          - link "Artifacts keyboard_arrow_right" [ref=e491] [cursor=pointer]:
+            - /url: /docs/artifacts

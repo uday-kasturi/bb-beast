@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "actions.schema.json",
+  "title": "Actions",
+  "description": "Structured next steps derived from triage.json. Input to the execution engine.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "created_at",
+    "run_id",
+    "actions",
+    "burp_tasks"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "run_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "action_id",
+          "finding_id",
+          "action_type",
+          "priority",
+          "risk_level"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "finding_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "action_type": {
+            "type": "string",
+            "enum": ["run_tool", "burp_scan", "flag_for_human", "skip"]
+          },
+          "tool": {
+            "type": "string",
+            "description": "Tool name if action_type is run_tool"
+          },
+          "command": {
+            "type": "string",
+            "description": "Exact command string to execute"
+          },
+          "parameters": {
+            "type": "object",
+            "description": "Structured parameters/flags to pass to the tool",
+            "additionalProperties": true
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "1 = highest priority, 5 = lowest"
+          },
+          "risk_level": {
+            "type": "string",
+            "enum": ["low", "medium", "high"],
+            "description": "Estimated risk to target. High risk actions require human approval."
+          },
+          "reason": {
+            "type": "string",
+            "description": "Why this action was generated"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["pending", "running", "completed", "failed", "skipped"],
+            "default": "pending"
+          }
+        }
+      }
+    },
+    "burp_tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["task_id", "finding_id", "target_url", "scan_type", "config_profile"],
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "finding_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "target_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "scan_type": {
+            "type": "string",
+            "enum": ["crawl_and_audit", "audit_only", "crawl_only", "active_scan"]
+          },
+          "config_profile": {
+            "type": "string",
+            "description": "Name of the Burp scan config to use"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["pending", "submitted", "running", "completed", "failed"],
+            "default": "pending"
+          }
+        }
+      }
+    }
+  }
+}

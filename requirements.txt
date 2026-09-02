@@ -1,0 +1,18 @@
+# BugBounty Beast — Python dependencies
+# Install: pip install -r requirements.txt
+
+# Core
+# anthropic SDK removed — triage uses the claude CLI (Claude Code) instead of the API.
+# Requires: claude CLI installed and logged in (claude.ai/download)
+jsonschema>=4.23.0         # Schema validation for all pipeline stages
+requests>=2.32.0           # Burp REST API integration
+
+# OAST / interactsh (tools/interactsh.py)
+cryptography>=42.0.0       # RSA key gen + AES decryption for interactsh callbacks
+
+# Headless browser (intelligence/browser.py)
+# After pip install: run `playwright install chromium`
+playwright>=1.44.0         # Headless Chromium for XSS screenshot evidence
+
+# CLI / utility
+# (no extra dependencies needed — uses stdlib argparse, subprocess, json, etc.)

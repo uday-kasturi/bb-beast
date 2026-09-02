@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-02-17T00:00:00Z",
+  "program_id": "google-vrp",
+  "name": "Google Vulnerability Reward Program",
+  "platform": "direct",
+  "program_url": "https://bughunters.google.com/about/rules/6625378258649088",
+  "non_monetary": false,
+  "in_scope": {
+    "domains": [
+      "*.google.com",
+      "*.googleapis.com",
+      "*.googleplex.com",
+      "*.ggpht.com",
+      "*.googleusercontent.com",
+      "*.gstatic.com",
+      "*.withgoogle.com",
+      "*.googleblog.com"
+    ],
+    "ip_ranges": [],
+    "endpoints": [],
+    "mobile_apps": [
+      {
+        "name": "Google App",
+        "platform": "ios"
+      },
+      {
+        "name": "Google App",
+        "platform": "android"
+      }
+    ]
+  },
+  "out_of_scope": {
+    "domains": [
+      "google.com/recaptcha",
+      "support.google.com",
+      "accounts.google.com"
+    ],
+    "ip_ranges": [],
+    "endpoints": [
+      "/recaptcha/",
+      "/sorry/",
+      "/search?q="
+    ],
+    "test_types": [
+      "dos",
+      "social_engineering",
+      "physical"
+    ]
+  },
+  "allowed_test_types": [
+    "recon",
+    "web_scan",
+    "xss",
+    "ssrf",
+    "xxe",
+    "ssti",
+    "auth_bypass",
+    "idor",
+    "open_redirect",
+    "csrf",
+    "secrets_scan",
+    "subdomain_takeover",
+    "supply_chain",
+    "cloud_enum"
+  ],
+  "contact": {
+    "disclosure_policy_url": "https://bughunters.google.com/about/rules/6625378258649088",
+    "response_sla_days": 7
+  },
+  "notes": "Hall of fame + monetary rewards. No SQLi, no port scanning, no brute force. Focus on web, API, and OAuth flows. Requires responsible disclosure."
+}

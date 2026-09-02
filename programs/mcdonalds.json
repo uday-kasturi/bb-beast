@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-07-02T00:00:00Z",
+  "program_id": "mcdonalds",
+  "name": "McDonald's Vulnerability Disclosure Engagement",
+  "platform": "bugcrowd",
+  "program_url": "https://bugcrowd.com/mcdonalds",
+  "non_monetary": true,
+
+  "in_scope": {
+    "domains": [
+      "*.mcdonalds.com",
+      "mcdonalds.com",
+      "*.mcd.com",
+      "mcd.com"
+    ],
+    "notes": "Any externally accessible application, domain, or digital asset demonstrably linked to McDonald's — including subdomains without McDonald's branding. Known tech tags: Akamai CDN, Java, jQuery, Bootstrap.",
+    "ip_ranges": [],
+    "endpoints": [],
+    "mobile_apps": []
+  },
+
+  "out_of_scope": {
+    "domains": [],
+    "ip_ranges": [],
+    "endpoints": [],
+    "test_types": [
+      "dos",
+      "ddos",
+      "port_scan",
+      "brute_force",
+      "spam",
+      "social_engineering",
+      "phishing",
+      "physical_access"
+    ],
+    "finding_classes": [
+      "missing_security_headers_generic",
+      "non_sensitive_cookie_flags",
+      "content_spoofing_no_html",
+      "cache_control_non_sensitive",
+      "browser_autocomplete",
+      "options_trace_no_exploit",
+      "ssl_tls_best_practice_only",
+      "mitm_required",
+      "dmarc_dkim_spf_no_abuse",
+      "cache_poisoning_no_impact",
+      "open_redirect_no_impact",
+      "clickjacking_non_sensitive",
+      "logout_csrf",
+      "idor_non_sensitive_id_only",
+      "race_condition_no_impact",
+      "missing_cert_pinning",
+      "outdated_library_no_poc",
+      "ai_only_submission",
+      "raw_scanner_output"
+    ]
+  },
+
+  "allowed_test_types": [
+    "recon",
+    "web_scan",
+    "xss",
+    "sqli",
+    "ssrf",
+    "ssti",
+    "xxe",
+    "command_injection",
+    "auth_bypass",
+    "idor",
+    "path_traversal",
+    "file_upload",
+    "secrets_scan",
+    "subdomain_takeover",
+    "supply_chain",
+    "cloud_enum"
+  ],
+
+  "throttle": {
+    "max_rps": 5,
+    "jitter_ms": [200, 800]
+  },
+
+  "contact": {
+    "disclosure_policy_url": "https://bugcrowd.com/mcdonalds",
+    "response_sla_business_days": 10,
+    "validation_days_p75": 11
+  },
+
+  "notes": "VDP — hall of fame only, no monetary rewards. Effective date: 2026-02-09. 160 vulns accepted as of engagement start. Scope is broad: any asset demonstrably linked to McDonald's counts even without branding. Register with @bugcrowdninja.com email. THROTTLE: max 5 req/s, no exceptions — limited automated tool use allowed. Do NOT access, view, or download personal information. Do NOT modify or delete data. Stop testing immediately if impact could be publicly visible. Use only your own accounts. Do not reproduce a finding after initial confirmation except when McDonald's requests it in writing. Known tech: Akamai CDN (WAF likely active), Java backend, jQuery/Bootstrap frontend. High-value targets: IDOR on order IDs or account data, auth bypass, account takeover chains, SSRF (Java backend suggests potential), subdomain takeover (massive global estate). Must chain IDOR into real impact — numeric ID exposure alone is informational. RBAC issues: submit one representative endpoint, not all duplicates. Chained findings go in ONE report with clear linkage. No AI-only analysis — all findings must show manual verification and original analysis. No bulk/raw scanner output."
+}
